@@ -90,6 +90,7 @@ body {
 .btns-right {
 	width: 200px;
     float: right;
+    margin-right: 30%;
 }
 
 textarea {

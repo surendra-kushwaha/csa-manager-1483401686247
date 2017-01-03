@@ -31,13 +31,13 @@
 </div>
 </div>
     <body>
-<form method="POST" action="createRequestController" name="requestForm" class="form-horizontal" style="margin-top: 0; padding: 25px 10% 0 10%;">
-  
-  <div style="margin-top: 40px;">
-  	<div class="row">
-  		<div class="col-lg-4 col-md-4 col-sm-4">
-  			&nbsp;
-  		</div>
+<form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
+	<p style="margin-top: 20px;">&nbsp;</p>
+  	<div class="col-lg-2 col-md-2 col-sm-2">
+  	&nbsp;
+	</div>
+	<div class="col-lg-10 col-md-10 col-sm-10">
+		<div class="row">
   		<div class="col-lg-4 col-md-4 col-sm-4">
   			<div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Cloud Service</label>
@@ -71,7 +71,7 @@
 		  </div>
   		</div>
   	</div>
-  </div>
+	</div>
   <button type="submit" class="btn btns btns-right">Create Request</button>
   <!-- 
   <div class="form-group">
