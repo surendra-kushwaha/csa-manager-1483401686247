@@ -13,11 +13,14 @@
 <div class="top-big-header-new sub-pages-head">
 
 <div class="top-bar-new row">
-	<div class="col-lg-8 col-md-8 col-sm-8 mob-fix">
+	<div class="col-lg-2 col-md-2 col-sm-2">
 		<a class="logo-links" href="#"><img src="images/Logo.png"></a>
-		<span class="header-h3">Cloud Service Acquisition Manager</span>
+		
 	</div>
-	<div class="col-lg-4 col-md-4 col-sm-2 txt-right">
+	<div class="col-lg-6 col-md-6 col-sm-6">
+	<p class="header-h3">Cloud Service Acquisition Manager</p>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-2 txt-right" style="margin-top: 20px;">
 		<img src="images/Poweredby_ACIT.png">
 	</div>
 </div>
