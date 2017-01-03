@@ -6,7 +6,7 @@
         <link href="lib/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <div class="top-big-header-new sub-pages-head">
+    <div class="top-big-header-new sub-pages-head container-fluid">
 
 <div class="top-bar-new row">
 	<div class="col-lg-2 col-md-2 col-sm-2">
@@ -26,19 +26,21 @@
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10 txt-right">
 		<p class="logged-user">Kunchala, Sridhar</p>
-		<a href="#" class="logout">Logout</a>
+		<a href="#/" class="logout">Logout</a>
 	</div>
 </div>
 </div>
     <body>
 <form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
-	<p style="margin-top: 20px;">&nbsp;</p>
-  	<div class="col-lg-2 col-md-2 col-sm-2">
-  	&nbsp;
+	<div>
+  	<div class="col-lg-2 col-md-2 col-sm-2 left-menus">
+  		<div class=""><img src="images/icon_View_Normal.png">View Status</div>
+  		<div class="active"><img src="images/icon_Create_Active.png">Create New Request</div>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10">
-		<div class="row">
-  		<div class="col-lg-4 col-md-4 col-sm-4">
+		<div class="row" style="padding: 30px 60px;">
+		<p class="title-head ">Cloud Service Acquisition Request (CSAR)</p>
+  		<div class="col-lg-5 col-md-5 col-sm-5">
   			<div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Cloud Service</label>
 		     <input type="text" class="form-control" id="cloudService" name="cloudService">
@@ -58,7 +60,7 @@
 		    <input type="text" class="form-control" id="cloudServiceUrl" name="cloudServiceUrl">
 		  </div>
   		</div>
-  		<div class="col-lg-4 col-md-4 col-sm-4">
+  		<div class="col-lg-5 col-md-5 col-sm-5">
   			<div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Business Description</label>
 		    <textarea class="form-control" id="businessDesc" name="businessDesc"></textarea>
@@ -72,6 +74,7 @@
   		</div>
   	</div>
 	</div>
+	<div>
   <button type="submit" class="btn btns btns-right">Create Request</button>
   <!-- 
   <div class="form-group">
