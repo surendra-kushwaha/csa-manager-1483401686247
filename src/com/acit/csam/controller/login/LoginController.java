@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
 	        HttpSession session = request.getSession();
 	        //session.setAttribute("userName", "Guest");
 	        session.setMaxInactiveInterval(600);
-	    	
+	    	request.setAttribute("userId", userName);
 	        if(status){
 	        	forward=ADD_REQUEST;
 	        	/*SkillInfo skillInfo=new SkillInfo();

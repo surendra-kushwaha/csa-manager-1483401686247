@@ -31,7 +31,10 @@
 </div>
 </div>
     <body>
-<form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
+    <%
+    String userId=(String)request.getAttribute("userId");
+    %>
+<form method="POST" action="CSARRequest" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-2 left-menus">
   		<div class=""><a href="viewListForm.jsp"><img src="images/icon_View_Normal.png">View Status</a></div>
@@ -52,7 +55,10 @@
 		  <div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Priority</label>
 		  	<select class="form-control" id="priority" name="priority">
-		  		<option></option>
+		  		<option value="Low">Low</option>
+		  		<option value="Medium">Medium</option>
+		  		<option value="High">High</option>
+		  		<option value="Normal">Normal</option>
 		  	</select>
 		  </div>
 		  <div class="form-group">
@@ -68,8 +74,11 @@
 		  <div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Class of Service</label>
 		    <select class="form-control" id="cos" name="cos">
-		  		<option></option>
+		  		<option value="">Select CoS</option>
+		  		<option value="Regulatory">regulatory</option>
+		  		<option value="expetite">expetite</option>
 		  	</select>
+		  	<input type="hidden" name="userId" value="<%=userId%>"/>
 		  </div>
   		</div>
   	</div>

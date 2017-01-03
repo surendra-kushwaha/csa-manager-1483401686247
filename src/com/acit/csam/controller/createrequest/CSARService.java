@@ -31,13 +31,21 @@ import org.apache.commons.codec.binary.Base64;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.acit.csam.dao.CSAManagerDao;
+import com.acit.csam.model.CSAMInfo;
 import com.acit.csam.util.Utility;
 /**
  * Servlet implementation class SimpleServlet
  */
-@WebServlet("/CSARRequestt")
+@WebServlet("/CSARRequest")
 public class CSARService extends HttpServlet {
     private static final long serialVersionUID = 1L;
+private CSAManagerDao dao;
+    
+    public CSARService() {
+        super();
+        dao = new CSAManagerDao();
+    }
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -77,6 +85,7 @@ public class CSARService extends HttpServlet {
 		}
 		
         response.getWriter().print(responseBoard);*/
+    	doPost(request,response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	 response.setContentType("text/html");
@@ -91,6 +100,46 @@ public class CSARService extends HttpServlet {
  			Utility.CARD_PRIORITY = http.getPriority(request.getParameter("priority"));
  			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(request.getParameter("classservice"));
  			responseBoard = http.createCard();
+ 			CSAMInfo csamInfo=new CSAMInfo(); 
+ 			//Parse response
+ 			try{
+ 			JSONObject json = new JSONObject(responseBoard);
+ 			JSONArray json1 = (JSONArray)json.get("ReplyData");
+ 			JSONObject json2 = (JSONObject) json1.get(0);
+ 			Utility.SEARCH_BY_BOARD_ID = ""+json2.getInt("BoardId");
+ 			Utility.LANE_ID = ""+json2.getInt("LaneId");
+ 			Utility.LANE_TITLE = json2.getString("LaneTitle");
+ 			String lastMove = json2.getString("LastMove");
+ 			String cardId=json2.getString("CardId");
+ 			System.out.println("CardId recieved in Response ##"+cardId);
+ 			
+ 			String cloudService=request.getParameter("cloudService");
+        	String lob=request.getParameter("lob");
+        	String priority=request.getParameter("priority");
+        	String cloudServiceUrl=request.getParameter("cloudServiceUrl");
+        	String businessDesc=request.getParameter("businessDesc");
+        	String cos=request.getParameter("cos");
+        	String requestorId=request.getParameter("userId");
+        	
+        	csamInfo.setCloudService(cloudService);
+        	csamInfo.setBusinessDesc(businessDesc);
+        	csamInfo.setCos(cos);
+        	csamInfo.setPriority(priority);
+        	csamInfo.setCloudServiceUrl(cloudServiceUrl);
+			csamInfo.setLob(lob);
+			csamInfo.setCardId(cardId);
+			csamInfo.setCardTitle(requestorId+cloudService+lob);
+			
+			System.out.println("Card Title##"+csamInfo.getCardTitle());
+			
+			boolean status=dao.createCSAR(csamInfo);
+ 			if(status){
+ 				response.getWriter().append("Data saved to DB "+status);
+ 			}
+ 			}catch(Exception e){
+ 				System.out.println(e);
+ 			}
+ 			
  		}else if(searchRequest.equals("view")){
  			responseBoard = http.getAllCards();
  		}else if(searchRequest.equals("carddetails")){
