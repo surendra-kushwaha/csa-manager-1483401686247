@@ -52,7 +52,7 @@ if(session!=null){
 	session.invalidate();
 }
  %>
-   				<form method="POST" action="LoginController" name="loginForm" class="form-horizontal" style="margin-top: 0; padding: 25px 10% 0 10%;">
+<form method="POST" action="LoginController" name="loginForm" class="form-horizontal" style="margin-top: 0; padding: 25px 10% 0 10%;">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-3 control-label">User Name</label>
     <div class="col-sm-9">
