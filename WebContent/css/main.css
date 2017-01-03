@@ -1,0 +1,64 @@
+@font-face
+{
+	font-family: "Helvetica Neue";
+	src: url("fonts/HelveticaNeueLTStd-Lt.otf");
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+.txt-right {
+	text-align: right;
+}
+
+.btns {
+	background-color : #00aeef;
+	border : 1px solid #13bfff;
+	border-radius: 4px;
+	font-family : Helvetica Neue;
+	font-size : 14px;
+	font-weight : 600;
+	color: #FFFFFF;
+	text-transform : Uppercase;
+	margin-top: 25px;
+    width: 100%;
+}
+
+.top-bar-new {
+	padding: 10px 20px;
+	background-color: #0000a0;
+}
+
+.header-h3 {
+	font-size : 24px;
+	font-weight: 600;
+	color: #FFFFFF;
+}
+
+.main-p-container {
+	background-image: url('../images/login_bg.jpg');
+	min-height: 650px;
+}
+
+.form-horizontal .form-group {
+	margin: 0 0 10px;
+}
+
+
+.login-container {
+	width: 400px;
+    margin: 80px auto;
+}
+
+.login-head-p {
+	font-size : 24px;
+	font-weight: 600;
+	text-transform : Uppercase;
+}
+
+.ln-brk {
+	border-top : solid 2px #FFFFFF;
+}

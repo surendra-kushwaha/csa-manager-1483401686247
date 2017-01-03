@@ -6,22 +6,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Page</title>
-        <link href="css/jquery.dataTables.min.css" rel="stylesheet">
-                    <link href="css/dataTables.tableTools.css" rel="stylesheet">
-                    <link href="css/bootstrap.css" rel="stylesheet">
-                    <link rel="stylesheet" href="css/main.css">
+        <link href="lib/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-    	<div class="main-p-container">
-                        <header>
-                            
-                        </header>
+<div class="top-big-header-new sub-pages-head">
+
+<div class="top-bar-new row">
+	<div class="col-lg-8 col-md-8 col-sm-8 mob-fix">
+		<a class="logo-links" href="#"><img src="images/Logo.png"></a>
+		<span class="header-h3">Cloud Service Acquisition Manager</span>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-2 txt-right">
+		<img src="images/Poweredby_ACIT.png">
+	</div>
+</div>
+</div>
                         
+    	<div class="main-p-container">
+
 						
 						<div class="container">
     	
    				
-   				<div class="col col-md-6" style="padding-top: 25px;">
+   				<div class="login-container">
 <%
 String inValidUser=null;
 if(request.getAttribute("loginMassage")!=null){
@@ -43,54 +51,19 @@ if(session!=null){
 }
  %>
 <form method="POST" action="LoginController" name="loginForm" class="form-horizontal" style="margin-top: 0; padding: 25px 10% 0 10%;">
+  <p class="login-head-p">LOGIN</p>
+  <p class="ln-brk">&nbsp;</p>
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-3 control-label">User Name</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="username" name="userName" placeholder="User Name">
-    </div>
+  	<label for="inputEmail3">User Name</label>
+    <input type="text" class="form-control" id="username" name="userName" placeholder="User Name">
   </div>
   <div class="form-group">
-    <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
-    <div class="col-sm-9">
-      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-    </div>
+  	<label for="inputPassword3">Password</label>
+    <input type="text" class="form-control" id="password" name="password" placeholder="Password">
   </div>
-  <div class="form-group">
-    <div class="col-sm-offset-3 col-sm-9">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" id="remDetails"> Remember my Login details
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-  <div class="col-sm-offset-3" style="padding-left:18px">
-  	 <input type="button" value="reset" class="btn btns resetbtn" style="margin-right: 10px;"/>
-  	 <button type="submit" class="btn btns">Login</button>
-  	 </div>
-  </div>
+  <button type="submit" class="btn btns">Login</button>
 </form>
-
-        <!-- <form method="POST" action='LoginController' name="loginForm" class="form-inline">                       
-            User Name : <input type="text" name="userName"
-                               value="" /> <br /><br /><br />
-             Password : 
-                <input type="password" name="password"
-                               value="" /> <br />  <br /><br />        
-                       <input type="checkbox">Remember my Login details
-                <br /> <br /> <br />
-             <input type="button" value="reset" class="btn btns resetbtn"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="submit" value="Submit" class="btn btns"/>
-        </form>-->
         </div></div>
-        <footer class="navbar-fixed-bottom">
-                                <div class="small container">
-                                    <div class="copy-rights">
-                                        Copyright &#169; 2004 - 2015. All rights reserved.
-                                    </div>
-                                </div>
-                            </footer>
         </div>
         </div>
     </body>
@@ -98,10 +71,7 @@ if(session!=null){
    					var errormsgs="";
    					var updateErr = "";
     			 </script>
-     <script src="js/jquery-1.11.3.min.js"></script>
-                <script src="js/bootstrap.min.js"></script>
-                <script src="js/jquery.dataTables.js"></script>
-                <script src="js/dataTables.tableTools.js"></script>
-                <script src="js/jquery.dataTables.columnFilter.js"></script>
-                <script src="js/main.js"></script>
+     <script src="lib/js/jquery-1.11.3.min.js"></script>
+                <script src="lib/js/bootstrap.min.js"></script>
+                <script src="scripts/main.js"></script>
 </html>
