@@ -79,6 +79,7 @@
 		  		<option value="expetite">expetite</option>
 		  	</select>
 		  	<input type="hidden" name="userId" value="<%=userId%>"/>
+		  	<input type="hidden" name="req" value="create"/>
 		  </div>
   		</div>
   	</div>
