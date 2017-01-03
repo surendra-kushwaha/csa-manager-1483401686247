@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
+        <title>Login</title>
         <link href="lib/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -15,7 +15,7 @@
 <div class="top-bar-new row">
 	<div class="col-lg-2 col-md-2 col-sm-2">
 		<a class="logo-links" href="#"><img src="images/Logo.png"></a>
-		
+
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6">
 	<p class="header-h3">Cloud Service Acquisition Manager</p>
@@ -25,13 +25,13 @@
 	</div>
 </div>
 </div>
-                        
+
     	<div class="main-p-container">
 
-						
+
 						<div class="container">
-    	
-   				
+
+
    				<div class="login-container">
 <%
 String inValidUser=null;
@@ -62,7 +62,7 @@ if(session!=null){
   </div>
   <div class="form-group">
   	<label for="inputPassword3">Password</label>
-    <input type="text" class="form-control" id="password" name="password" placeholder="Password">
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
   </div>
   <button type="submit" class="btn btns">Login</button>
 </form>
