@@ -26,7 +26,7 @@
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10 txt-right">
 		<p class="logged-user">Kunchala, Sridhar</p>
-		<a href="#/" class="logout">Logout</a>
+		<a href="/" class="logout">Logout</a>
 	</div>
 </div>
 </div>
@@ -34,7 +34,7 @@
 <form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-2 left-menus">
-  		<div class=""><img src="images/icon_View_Normal.png">View Status</div>
+  		<div class=""><a href="viewListForm.jsp"><img src="images/icon_View_Normal.png">View Status</a></div>
   		<div class="active"><img src="images/icon_Create_Active.png">Create New Request</div>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10">
