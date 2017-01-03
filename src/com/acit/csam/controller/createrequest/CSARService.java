@@ -95,12 +95,33 @@ private CSAManagerDao dao;
  		String searchRequest = request.getParameter("req");
  		//System.out.println("search request is------->"+searchRequest);
  		if(searchRequest.equals("create")){
- 			Utility.CARD_TITLE = request.getParameter("title");
+ 			/*Utility.CARD_TITLE = request.getParameter("title");
  			Utility.CARD_DESCRIPTION = request.getParameter("description");
  			Utility.CARD_PRIORITY = http.getPriority(request.getParameter("priority"));
- 			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(request.getParameter("classservice"));
+ 			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(request.getParameter("classservice"));*/
+ 			
+ 			String cloudService=request.getParameter("cloudService");
+        	String lob=request.getParameter("lob");
+        	String priority=request.getParameter("priority");
+        	String cloudServiceUrl=request.getParameter("cloudServiceUrl");
+        	String businessDesc=request.getParameter("businessDesc");
+        	String cos=request.getParameter("cos");
+        	String requestorId=request.getParameter("userId");
+        	CSAMInfo csamInfo=new CSAMInfo();
+        	csamInfo.setCloudService(cloudService);
+        	csamInfo.setBusinessDesc(businessDesc);
+        	csamInfo.setCos(cos);
+        	csamInfo.setPriority(priority);
+        	csamInfo.setCloudServiceUrl(cloudServiceUrl);
+			csamInfo.setLob(lob);			
+			csamInfo.setCardTitle(requestorId+cloudService+lob);
+ 			
+ 			Utility.CARD_TITLE = requestorId+cloudService+lob;
+ 			Utility.CARD_DESCRIPTION = businessDesc;
+ 			Utility.CARD_PRIORITY = http.getPriority(priority);
+ 			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(cos);
  			responseBoard = http.createCard();
- 			CSAMInfo csamInfo=new CSAMInfo(); 
+ 			 
  			//Parse response
  			try{
  			JSONObject json = new JSONObject(responseBoard);
@@ -112,23 +133,7 @@ private CSAManagerDao dao;
  			String lastMove = json2.getString("LastMove");
  			String cardId=json2.getString("CardId");
  			System.out.println("CardId recieved in Response ##"+cardId);
- 			
- 			String cloudService=request.getParameter("cloudService");
-        	String lob=request.getParameter("lob");
-        	String priority=request.getParameter("priority");
-        	String cloudServiceUrl=request.getParameter("cloudServiceUrl");
-        	String businessDesc=request.getParameter("businessDesc");
-        	String cos=request.getParameter("cos");
-        	String requestorId=request.getParameter("userId");
-        	
-        	csamInfo.setCloudService(cloudService);
-        	csamInfo.setBusinessDesc(businessDesc);
-        	csamInfo.setCos(cos);
-        	csamInfo.setPriority(priority);
-        	csamInfo.setCloudServiceUrl(cloudServiceUrl);
-			csamInfo.setLob(lob);
-			csamInfo.setCardId(cardId);
-			csamInfo.setCardTitle(requestorId+cloudService+lob);
+ 			csamInfo.setCardId(cardId);
 			
 			System.out.println("Card Title##"+csamInfo.getCardTitle());
 			

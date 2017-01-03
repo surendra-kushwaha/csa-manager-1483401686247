@@ -74,9 +74,11 @@
 		  <div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Class of Service</label>
 		    <select class="form-control" id="cos" name="cos">
-		  		<option value="">Select CoS</option>
-		  		<option value="Regulatory">regulatory</option>
-		  		<option value="expetite">expetite</option>
+		  		<option value="">Select CoS</option>		  		
+		  		<option value="Date Dependent">Date Dependent</option>
+		  		<option value="Regulatory">Regulatory</option>
+		  		<option value="Expedite">Expedite</option>
+		  		<option value="Standard">Standard</option>
 		  	</select>
 		  	<input type="hidden" name="userId" value="<%=userId%>"/>
 		  	<input type="hidden" name="req" value="create"/>
