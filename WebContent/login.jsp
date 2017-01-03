@@ -14,23 +14,13 @@
     <body>
     	<div class="main-p-container">
                         <header>
-                            <div class="container">
-                                <div class="row top-header-row">
-                                    <div class="col col-md-12 col-sm-12 col-xs-12">
-                                    	<img class="acc-login" src="images/logo.png" >
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </header>
-                        <div class="container">
-                                	<img src="images/sub_title.png" />
-                                </div>
+                        
 						
 						<div class="container">
     	
-   				<div class="login-container row">
-   				<div class="col col-md-6"><img src="images/login_image.png">
-   				</div>
+   				
    				<div class="col col-md-6" style="padding-top: 25px;">
 <%
 String inValidUser=null;
@@ -56,7 +46,7 @@ if(session!=null){
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-3 control-label">User Name</label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" id="username" name="userName" placeholder="User Name" style="width: 100%;">
+      <input type="text" class="form-control" id="username" name="userName" placeholder="User Name">
     </div>
   </div>
   <div class="form-group">

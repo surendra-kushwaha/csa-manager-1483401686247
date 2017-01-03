@@ -1,12 +1,12 @@
 package com.acit.csam.dao;
 
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import com.acit.csam.exception.CSAMException;
 import com.acit.csam.model.CSAMInfo;
@@ -21,7 +21,7 @@ public class CSAManagerDao {
 		// connection = null;
 	}
     //*** updatePolicy method updated by Surendra ****** //
-    public boolean updateSkill(CSAMInfo csamInfo) throws CSAMException{
+    public boolean createCSAR(CSAMInfo csamInfo) throws CSAMException{
     	boolean updateSuccessFlag=false;
     	PreparedStatement preparedStatement=null;
        //System.out.println("In updatePolicy - Start ");
@@ -32,46 +32,26 @@ public class CSAManagerDao {
 		    }
     		//List<InputStream> bindVariables = new ArrayList<InputStream>();
     		StringBuffer queryString = new StringBuffer();
-			queryString.append("UPDATE MULTI_SKILLING_DATA set \"SKILL_ROLE\"=?,\"SCORE\"=?, \"CERTIFICATE_NAME\"=?,  \"CERT_UPLOAD_FLAG\"=?,  \"CERTIFICATE_EXTN\"=?, \"CERTIFICATE\"=?"
-            		+", \"WORK_LOCATION\"=?,  \"CERTIFICATION_DATE\"=?,  \"CLEARED_FLAG\"=?, \"SECTION1_SCORE\"=?, \"SECTION2_SCORE\"=?, \"SECTION3_SCORE\"=?,"
-            		+ " \"SECTION4_SCORE\"=?, \"SECTION5_SCORE\"=?, \"SECTION6_SCORE\"=?,\"UPLOAD_DATE\"=? where \"ENTERPRIZE_ID\"=?");
+			queryString.append("INSERT INTO CSAR (\"ID\",\"REQUESTOR_ID\",\"CLOUD_SERVICE\",\"PRIORITY\",\"BUSSINESS_DESC\","
+					+ "\"CoS\",\"CLOUD_SERVICE_URL\",\"CARD_TITLE\",\"CARD_ID\",\"CREATED_DATE\",,\"LOB\")"
+					+ " VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 
 			
 			
 			preparedStatement = connection.prepareStatement(queryString.toString());
 			//System.out.println("update query String ##"+queryString.toString());
-			/*preparedStatement.setString(1, skillInfo.getSkillRole());
-			preparedStatement.setString(2, skillInfo.getScore());
-			preparedStatement.setString(3, skillInfo.getCertificateName());
-            preparedStatement.setString(4, "YES");
-            preparedStatement.setString(5,skillInfo.getCertificateExtn());
-           // preparedStatement.setBinaryStream(6, skillInfo.getCertificate(),skillInfo.getCertificate().available());
+			preparedStatement.setString(1, new Date().toString());
+			preparedStatement.setString(2, Math.random()+"");
+			preparedStatement.setString(3, csamInfo.getCloudService());
+            preparedStatement.setString(4, csamInfo.getPriority());
+            preparedStatement.setString(5,csamInfo.getBusinessDesc());
+            preparedStatement.setString(6, csamInfo.getCos());
             
-            preparedStatement.setString(7, skillInfo.getWorkLocation());
-			preparedStatement.setString(8, skillInfo.getCertDate());
-            preparedStatement.setString(9, skillInfo.getClear());
-            preparedStatement.setString(10,skillInfo.getSection1Score());
-            preparedStatement.setString(11, skillInfo.getSection2Score());
-            preparedStatement.setString(12, skillInfo.getSection3Score());
-			preparedStatement.setString(13, skillInfo.getSection4Score());
-            preparedStatement.setString(14, skillInfo.getSection5Score());
-            preparedStatement.setString(15,skillInfo.getSection6Score());
-            
-            String PATTERN="dd-MMM-YYYY";
-            SimpleDateFormat dateFormat=new SimpleDateFormat();
-            dateFormat.applyPattern(PATTERN);
-            String uploadDate=dateFormat.format(Calendar.getInstance().getTime());
-            System.out.println("uploadDate##"+uploadDate);
-            preparedStatement.setString(16,uploadDate);
-            
-            preparedStatement.setString(17, skillInfo.getEnterprizeId());*/
-    		/*for (int i = 0; i < bindVariables.size(); i++) {
-				// variables are indexed from 1 in JDBC
-    			int index=9;
-    			preparedStatement.setBinaryStream(index+i + 1, bindVariables.get(i),bindVariables.get(i).available());
-			}  */  		
-            
-            
+            preparedStatement.setString(7, csamInfo.getCloudServiceUrl());
+			preparedStatement.setString(8, csamInfo.getCardTitle());
+            preparedStatement.setString(9, csamInfo.getCardId());
+            preparedStatement.setString(10,new Date().toString());
+            preparedStatement.setString(11, csamInfo.getLob());
             
             int updateflag=preparedStatement.executeUpdate();
             if(updateflag>0){

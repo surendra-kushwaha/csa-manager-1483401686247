@@ -14,6 +14,7 @@ public class CSAMInfo {
 	String cardTitle;
 	String cardId;
 	String createdDate;
+	String lob;
 	//String uploadDate;
 	public String getId() {
 		return Id;
@@ -74,6 +75,12 @@ public class CSAMInfo {
 	}
 	public void setCreatedDate(String createdDate) {
 		this.createdDate = createdDate;
+	}
+	public String getLob() {
+		return lob;
+	}
+	public void setLob(String lob) {
+		this.lob = lob;
 	}
 	
 	
