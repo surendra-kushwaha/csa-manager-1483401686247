@@ -53,7 +53,7 @@ if(session!=null){
 	session.invalidate();
 }
  %>
-<form method="POST" action="LoginController" name="loginForm" class="form-horizontal" style="margin-top: 0; padding: 25px 10% 0 10%;">
+<form method="POST" action="LoginController" name="loginForm" class="form-horizontal login-box" style="margin-top: 0; padding: 25px 10% 0 10%;">
   <p class="login-head-p">LOGIN</p>
   <p class="ln-brk">&nbsp;</p>
   <div class="form-group">
