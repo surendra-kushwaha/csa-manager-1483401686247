@@ -28,10 +28,9 @@ public class CreateRequestController extends HttpServlet {
     }
     
     protected void doPost(HttpServletRequest request,
-            HttpServletResponse response) throws ServletException, IOException {
-        final String LIST_DATA = "/multiSkillInfo.jsp"; 
+            HttpServletResponse response) throws ServletException, IOException { 
         final String SKILL_UPLOAD = "/createRequestForm.jsp";
-       final String RESOURCE_SKILL="/resourceSkillInfo.jsp";
+       //final String RESOURCE_SKILL="/resourceSkillInfo.jsp";
         CSAMInfo csamInfo=new CSAMInfo();        
         try {
         	       	       	
@@ -53,9 +52,8 @@ public class CreateRequestController extends HttpServlet {
             try{
                 dao.createCSAR(csamInfo);
                 request.setAttribute("addFlag","addSuccess");                
-        		forward=RESOURCE_SKILL;
+        		//forward=RESOURCE_SKILL;
         		//if(employeeRole.equalsIgnoreCase("admin")){
-        			forward=LIST_DATA;
         			//request.setAttribute("skillList", dao.getFormDataByEntId(enterprizeId));
         		//}/*else{
         			//forward=RESOURCE_SKILL;
@@ -85,9 +83,9 @@ public class CreateRequestController extends HttpServlet {
             }
         	
                     	       	
-            RequestDispatcher view = request.getRequestDispatcher(forward);
-            view.forward(request, response);
-        	
+            //RequestDispatcher view = request.getRequestDispatcher(forward);
+            //view.forward(request, response);
+        	response.getWriter().append("Records Added to DB");
         }  catch(Exception e) { 
         	e.printStackTrace();
         }

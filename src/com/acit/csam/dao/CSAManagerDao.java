@@ -33,7 +33,7 @@ public class CSAManagerDao {
     		//List<InputStream> bindVariables = new ArrayList<InputStream>();
     		StringBuffer queryString = new StringBuffer();
 			queryString.append("INSERT INTO CSAR (\"ID\",\"REQUESTOR_ID\",\"CLOUD_SERVICE\",\"PRIORITY\",\"BUSSINESS_DESC\","
-					+ "\"CoS\",\"CLOUD_SERVICE_URL\",\"CARD_TITLE\",\"CARD_ID\",\"CREATED_DATE\",,\"LOB\")"
+					+ "\"CoS\",\"CLOUD_SERVICE_URL\",\"CARD_TITLE\",\"CARD_ID\",\"CREATED_DATE\",\"LOB\")"
 					+ " VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 
 			
