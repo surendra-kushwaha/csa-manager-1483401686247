@@ -6,7 +6,7 @@
     </head>
     <body>
 user logged in successfully:
-<form method="POST" action="CreateRequestController" name="loginForm" class="form-horizontal" style="margin-top: 0; padding: 25px 10% 0 10%;">
+<form method="POST" action="createRequestController" name="loginForm" class="form-horizontal" style="margin-top: 0; padding: 25px 10% 0 10%;">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-3 control-label">Cloud Service</label>
     <div class="col-sm-9">
