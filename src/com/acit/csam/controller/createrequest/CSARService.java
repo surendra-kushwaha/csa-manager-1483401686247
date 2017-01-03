@@ -115,7 +115,7 @@ private CSAManagerDao dao;
         	csamInfo.setCloudServiceUrl(cloudServiceUrl);
 			csamInfo.setLob(lob);			
 			csamInfo.setCardTitle(requestorId+cloudService+lob);
- 			
+			System.out.println("Card Title##"+csamInfo.getCardTitle());
  			Utility.CARD_TITLE = requestorId+cloudService+lob;
  			Utility.CARD_DESCRIPTION = businessDesc;
  			Utility.CARD_PRIORITY = http.getPriority(priority);
@@ -127,15 +127,13 @@ private CSAManagerDao dao;
  			JSONObject json = new JSONObject(responseBoard);
  			JSONArray json1 = (JSONArray)json.get("ReplyData");
  			JSONObject json2 = (JSONObject) json1.get(0);
- 			Utility.SEARCH_BY_BOARD_ID = ""+json2.getInt("BoardId");
- 			Utility.LANE_ID = ""+json2.getInt("LaneId");
- 			Utility.LANE_TITLE = json2.getString("LaneTitle");
- 			String lastMove = json2.getString("LastMove");
+ 			//Utility.SEARCH_BY_BOARD_ID = ""+json2.getInt("BoardId");
+ 			//Utility.LANE_ID = ""+json2.getInt("LaneId");
+ 			//Utility.LANE_TITLE = json2.getString("LaneTitle");
+ 			//String lastMove = json2.getString("LastMove");
  			String cardId=json2.getString("CardId");
  			System.out.println("CardId recieved in Response ##"+cardId);
- 			csamInfo.setCardId(cardId);
-			
-			System.out.println("Card Title##"+csamInfo.getCardTitle());
+ 			csamInfo.setCardId(cardId);			
 			
 			boolean status=dao.createCSAR(csamInfo);
  			if(status){
