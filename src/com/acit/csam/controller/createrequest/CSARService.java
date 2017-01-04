@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
@@ -99,6 +100,11 @@ private CSAManagerDao dao;
         	String businessDesc=request.getParameter("businessDesc");
         	String cos=request.getParameter("cos");
         	String requestorId=request.getParameter("userId");
+        	HttpSession session = request.getSession();
+        	if(requestorId==null){
+        		requestorId=(String)session.getAttribute("userName");
+        	}
+        	System.out.println("userId recieved in ontroller  "+requestorId);
         	CSAMInfo csamInfo=new CSAMInfo();
         	csamInfo.setCloudService(cloudService);
         	csamInfo.setBusinessDesc(businessDesc);
@@ -130,6 +136,8 @@ private CSAManagerDao dao;
 			
 			boolean status=dao.createCSAR(csamInfo);
  			if(status){
+ 				
+ 				System.out.println("data added successfully");
  				//response.getWriter().append("Data saved to DB "+status);
  				//dao.getRequestaList(requestorId);
  				//request.setAttribute("RequestList", dao.getRequestaList(requestorId));

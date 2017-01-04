@@ -6,6 +6,21 @@
         <link href="lib/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
+    <%
+    String userId=(String)session.getAttribute("userId");
+    Syste.out.println("userid recieved in session"+userId);
+    %>
+    <%
+            String err=" ";
+            String userName="";
+            if(request.getSession().getAttribute("userName")!=null){
+            	userName =request.getSession().getAttribute("userName").toString();
+            }else{
+            	//response.sendRedirect("LogoutController");
+            }
+            //System.out.println("userName @@"+userName);
+           
+      %>
     <div class="top-big-header-new sub-pages-head container-fluid">
 
 <div class="top-bar-new row">
@@ -25,15 +40,13 @@
 		<a class="menu-links addCls" href="#"><img src="images/icon_menu.png"></a>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9 txt-right">
-		<p class="logged-user">Kunchala, Sridhar</p>
+		<p class="logged-user"><%=userName%></p>
 		<a href="/" class="logout">Logout</a>
 	</div>
 </div>
 </div>
     <body>
-    <%
-    String userId=(String)request.getAttribute("userId");
-    %>
+    
 <form method="POST" action="CSARRequest" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
@@ -59,7 +72,7 @@
 		  	<select class="form-control" id="priority" name="priority" required>
 		  		<option value="">Select Priority</option>
 		  		<option value="Low">Low</option>
-		  		<option value="Medium">Medium</option>
+		  		<option value="Critical">Critical</option>
 		  		<option value="High">High</option>
 		  		<option value="Normal">Normal</option>
 		  	</select>

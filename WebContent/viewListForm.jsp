@@ -40,7 +40,7 @@
 		<a class="menu-links" href="#"><img src="images/icon_menu.png"></a>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9 txt-right">
-		<p class="logged-user">Kunchala, Sridhar</p>
+		<p class="logged-user"><%=userName%></p>
 		<a href="/" class="logout">Logout</a>
 	</div>
 </div>

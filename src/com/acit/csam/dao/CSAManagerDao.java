@@ -36,7 +36,7 @@ public class CSAManagerDao {
 					+ "\"CoS\",\"CLOUD_SERVICE_URL\",\"CARD_TITLE\",\"CARD_ID\",\"CREATED_DATE\",\"LOB\")"
 					+ " VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 
-			
+			System.out.println("getRequesterId  "+csamInfo.getRequesterId());
 			
 			preparedStatement = connection.prepareStatement(queryString.toString());
 			//System.out.println("update query String ##"+queryString.toString());

@@ -16,7 +16,7 @@ import com.acit.csam.exception.CSAMException;
 @WebServlet("/LoginController")  
 public class LoginController extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static String ADD_REQUEST = "/createRequestForm.jsp";
+    private static String ADD_REQUEST = "/viewFormsDetails.jsp";
     private static String LOGIN_PAGE = "/login.jsp";
     private CSAManagerDao dao;
   
@@ -41,7 +41,7 @@ public class LoginController extends HttpServlet {
 	        //session.setAttribute("userName", "Guest");
 	        session.setMaxInactiveInterval(600);
 	        
-	    	request.setAttribute("userId", userName);
+	    	session.setAttribute("userId", userName);
 	        if(status){
 	        	forward=ADD_REQUEST;
 	        	session.setAttribute("userName", userName);
