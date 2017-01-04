@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<%
+            String err=" ";
+            String userName="";
+            if(request.getSession().getAttribute("userName")!=null){
+            	userName =request.getSession().getAttribute("userName").toString();
+            }else{
+            	//response.sendRedirect("LogoutController");
+            }
+            //System.out.println("userName @@"+userName);
+           
+      %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,7 +36,7 @@
 		<a class="menu-links" href="#"><img src="images/icon_menu.png"></a>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9 txt-right">
-		<p class="logged-user">Kunchala, Sridhar</p>
+		<p class="logged-user"><%=userName%></p>
 		<a href="/" class="logout">Logout</a>
 	</div>
 </div>
