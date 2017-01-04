@@ -109,7 +109,7 @@ private CSAManagerDao dao;
 			csamInfo.setCardTitle(cloudService+" "+lob+" "+requestorId);
 			csamInfo.setRequesterId(requestorId);
 			System.out.println("Card Title##"+csamInfo.getCardTitle());
- 			Utility.CARD_TITLE = requestorId+cloudService+lob;
+ 			Utility.CARD_TITLE = cloudService+" "+lob+" "+requestorId;
  			Utility.CARD_DESCRIPTION = businessDesc;
  			Utility.CARD_PRIORITY = http.getPriority(priority);
  			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(cos);
@@ -173,6 +173,19 @@ private CSAManagerDao dao;
  			Utility.LANE_ID = ""+json2.getInt("LaneId");
  			Utility.LANE_TITLE = json2.getString("LaneTitle");
  			String lastMove = json2.getString("LastMove");
+ 			
+ 			String cloudService=request.getParameter("cloudService");
+        	String lob=request.getParameter("lob");
+        	String priority=json2.getString("PriorityText");
+        	String cloudServiceUrl=request.getParameter("cloudServiceUrl");
+        	String businessDesc=request.getParameter("businessDesc");
+        	String cos=request.getParameter("cos");
+        	String requestorId=request.getParameter("userId");
+        	String status=json2.getString("LaneTitle");
+ 			
+        	System.out.println("Status ## "+status);
+        	System.out.println("priority  "+priority);
+        	
  			}catch(Exception e){
  				System.out.println("Exception occured"+e);
  			}

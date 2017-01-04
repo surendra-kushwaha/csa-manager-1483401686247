@@ -12,12 +12,12 @@
     </head>
     <%
             String err=" ";
-            String userName="";
-            if(request.getSession().getAttribute("userName")!=null){
+            String userName="surendra";
+            /*if(request.getSession().getAttribute("userName")!=null){
             	userName =request.getSession().getAttribute("userName").toString();
             }else{
             	//response.sendRedirect("LogoutController");
-            }
+            }*/
             //System.out.println("userName @@"+userName);
            
       %>
