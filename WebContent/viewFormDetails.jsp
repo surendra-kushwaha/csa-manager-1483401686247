@@ -32,12 +32,12 @@
 </div>
     <body>
 	<div>
-  	<div class="col-lg-2 col-md-2 col-sm-2 left-menus">
+  	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
   		<div><a href="viewListForm.jsp"><img src="images/icon_View_Normal.png">View Status</a>
   		</div>
   		<div><a href="createRequestForm.jsp"><img src="images/icon_Create_normal.png">Create New Request</a></div>
 	</div>
-	<div class="col-lg-10 col-md-10 col-sm-10">
+	<div class="col-lg-10 col-md-10 col-sm-9">
 		<div class="row" style="padding: 30px 60px;">
 		<p class="title-head ">Status Details <span class='back-span'><a href="viewListForm.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href='feedback.jsp'>Feedback</a></span></p>
   		<div class="col-lg-12 col-md-12 col-sm-12 details-page">

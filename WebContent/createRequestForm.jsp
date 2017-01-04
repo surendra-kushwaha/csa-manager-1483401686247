@@ -21,10 +21,10 @@
 	</div>
 </div>
 <div class="top-bar-next row">
-	<div class="col-lg-2 col-md-2 col-sm-2">
+	<div class="col-lg-2 col-md-2 col-sm-3">
 		<a class="menu-links" href="#"><img src="images/icon_menu.png"></a>
 	</div>
-	<div class="col-lg-10 col-md-10 col-sm-10 txt-right">
+	<div class="col-lg-10 col-md-10 col-sm-9 txt-right">
 		<p class="logged-user">Kunchala, Sridhar</p>
 		<a href="/" class="logout">Logout</a>
 	</div>

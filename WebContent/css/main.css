@@ -261,4 +261,8 @@ footer {
 	.back-span {
 		width: 40%;
 	}
+	
+	.arrow-right {
+		margin-top: 0;
+	}
 }
