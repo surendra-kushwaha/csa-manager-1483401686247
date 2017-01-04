@@ -177,10 +177,11 @@ private CSAManagerDao dao;
  			JSONObject commentsJson = new JSONObject(responseBoard);
  			System.out.println("hi2");
  			JSONArray commentsJson1 = (JSONArray)commentsJson.get("ReplyData");
- 			JSONArray json2 = (JSONArray) commentsJson1.get(0);
+ 			JSONObject json2 = (JSONObject) commentsJson1.get(0);
+ 			JSONArray commentsJson3 = (JSONArray)json2.get("Results");
  			//List<Comments> commentList=new ArrayList<Comments>();
- 			for(int i=0; i<json2.length();i++){
- 				JSONObject commentsJson2 = (JSONObject) json2.get(i);
+ 			for(int i=0; i<commentsJson3.length();i++){
+ 				JSONObject commentsJson2 = (JSONObject) commentsJson3.get(i);
  				System.out.println("Title from view##"+commentsJson2.getString("Title"));
  			}
  			response.getWriter().append(responseBoard);
