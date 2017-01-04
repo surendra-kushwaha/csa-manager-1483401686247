@@ -240,13 +240,18 @@ private CSAManagerDao dao;
  			JSONObject commentsJson = new JSONObject(lastComments);
  			System.out.println("hi2");
  			JSONArray commentsJson1 = (JSONArray)commentsJson.get("ReplyData");
+ 			System.out.println("Hi3##"+commentsJson1.toString());
  			List<Comments> commentList=new ArrayList<Comments>();
- 			for(int i=0; i<commentsJson1.length();i++){
+ 			JSONArray json22 = (JSONArray) commentsJson1.get(0);
+ 			System.out.println("Hi3#A#"+json22);
+ 			for(int i=0; i<json22.length();i++){
+ 				System.out.println("hi4");
  				JSONObject commentsJson2 = (JSONObject) commentsJson1.get(i);
+ 				System.out.println("hi5");
  				Comments comment=new Comments();
- 				comment.setPostedBy(json2.getString("PostedByFullName"));
- 				comment.setPostDate(json2.getString("Text"));
- 				comment.setComment(json2.getString("Text"));
+ 				comment.setPostedBy(commentsJson2.getString("PostedByFullName"));
+ 				comment.setPostDate(commentsJson2.getString("Text"));
+ 				comment.setComment(commentsJson2.getString("Text"));
  				commentList.add(comment);
  			}
  			
