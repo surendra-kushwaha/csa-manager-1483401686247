@@ -85,7 +85,7 @@ private CSAManagerDao dao;
     	 response.setContentType("text/html");
          String responseBoard = "";
          CSARService http = new CSARService();
-         final String VIEW_STATUS = "/viewListForm.jsp";
+         final String VIEW_STATUS = "/viewListForm.jsp?req=view";
  		String searchRequest = request.getParameter("req");
  		//System.out.println("search request is------->"+searchRequest);
  		if(searchRequest.equals("create")){
@@ -179,17 +179,41 @@ private CSAManagerDao dao;
  			JSONArray commentsJson1 = (JSONArray)commentsJson.get("ReplyData");
  			JSONObject json2 = (JSONObject) commentsJson1.get(0);
  			JSONArray commentsJson3 = (JSONArray)json2.get("Results");
- 			//List<Comments> commentList=new ArrayList<Comments>();
+ 			List<CSAMInfo> cardList=new ArrayList<CSAMInfo>();
  			for(int i=0; i<commentsJson3.length();i++){
  				JSONObject commentsJson2 = (JSONObject) commentsJson3.get(i);
  				System.out.println("Title from view##"+commentsJson2.getString("Title"));
+ 				String cardId=commentsJson2.getString("Id");
+ 				String priority=commentsJson2.getString("PriorityText");
+ 	        	System.out.println("hi6 "+priority);
+ 	        	String description=commentsJson2.getString("Description");
+ 	        	//String cloudServiceUrl=request.getParameter("cloudServiceUrl");
+ 	        	//String businessDesc=request.getParameter("businessDesc");
+ 	        	String cos=commentsJson2.getString("ClassOfServiceTitle");
+ 	        	//String requestorId=request.getParameter("userId");
+ 	        	String status=commentsJson2.getString("LaneTitle");
+ 	        	String lastUpdatedDate=commentsJson2.getString("LastActivity");  
+ 	        	System.out.println("lastUpdatedDate  "+lastUpdatedDate);
+ 	        	String assignedTo=commentsJson2.getString("AssignedUserName");
+ 	        	CSAMInfo csamInfo=new CSAMInfo();
+ 	        	csamInfo=dao.getCardDetails(request.getParameter("cardid"));
+ 	        	csamInfo.setAssignedTo(assignedTo);
+ 	        	csamInfo.setCardStatus(status);
+ 	        	csamInfo.setLastUpdatedDate(lastUpdatedDate);
+ 	        	csamInfo.setPriority(priority);
+ 	        	csamInfo.setBusinessDesc(description);
+ 	        	csamInfo.setCos(cos);
+ 	        	cardList.add(csamInfo);
+ 				
  			}
- 			response.getWriter().append(responseBoard);
+ 			
+ 			request.setAttribute("cardList", cardList);
+ 			//response.getWriter().append(responseBoard);
  			}catch(Exception e){
  				System.out.println("exception occured "+e);
  			}
- 			//RequestDispatcher view = request.getRequestDispatcher("/viewListForm.jsp");
-            //view.forward(request, response);
+ 			RequestDispatcher view = request.getRequestDispatcher("/viewListForm.jsp");
+            view.forward(request, response);
  			//responseBoard = http.getAllCards();
  		}else if(searchRequest.equals("carddetails")){
  			//System.out.println("search request is 222------->"+searchRequest);
@@ -250,7 +274,7 @@ private CSAManagerDao dao;
  				System.out.println("hi5");
  				Comments comment=new Comments();
  				comment.setPostedBy(commentsJson2.getString("PostedByFullName"));
- 				comment.setPostDate(commentsJson2.getString("Text"));
+ 				comment.setPostDate(commentsJson2.getString("PostDate"));
  				comment.setComment(commentsJson2.getString("Text"));
  				commentList.add(comment);
  			}

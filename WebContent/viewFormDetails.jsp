@@ -74,7 +74,7 @@
   				<tr>
   					<td class="col-lg-3 col-md-3 col-sm-3"><p class='small-title'>Post Date</p></td>
   					<td class="col-lg-4 col-md-4 col-sm-4"><p class='small-title'>Posted By</p></td>
-  					<td class="col-lg-5 col-md-5 col-sm-5"><p class='small-title'>Posted By</p></td>
+  					<td class="col-lg-5 col-md-5 col-sm-5"><p class='small-title'>Comments</p></td>
   				</tr>
   				<%
   				List<Comments> commentList=(List<Comments>)request.getAttribute("CommentsList"); 

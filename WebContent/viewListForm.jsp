@@ -80,8 +80,9 @@ if(request.getAttribute("addFlag")!=null) {
 			    </thead>
 			    <tbody>
 <%
-   				CSAManagerDao dao= new CSAManagerDao(); 
-   				List<CSAMInfo> reqList= (List<CSAMInfo>)dao.getRequestaList(userName); 
+   				//CSAManagerDao dao= new CSAManagerDao(); 
+   				//List<CSAMInfo> reqList= (List<CSAMInfo>)dao.getRequestaList(userName); 
+   				List<CSAMInfo> reqList= (List<CSAMInfo>)request.getAttribute("cardList");
 	 			   Iterator itr=reqList.iterator();
 	 			   while(itr.hasNext()){
 	 				  CSAMInfo csamInfo=(CSAMInfo)itr.next();
