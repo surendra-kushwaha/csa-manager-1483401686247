@@ -3,7 +3,7 @@ package com.acit.csam.controller.createrequest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -26,6 +26,7 @@ import org.json.JSONObject;
 
 import com.acit.csam.dao.CSAManagerDao;
 import com.acit.csam.model.CSAMInfo;
+import com.acit.csam.model.Comments;
 import com.acit.csam.util.Utility;
 /**
  * Servlet implementation class SimpleServlet
@@ -172,7 +173,20 @@ private CSAManagerDao dao;
  			Utility.SEARCH_TEXT =  request.getParameter("userId");///////////////New line added by Bibek
  			responseBoard = http.getCardsByBoard();///////////////New line added by Bibek
  			System.out.println("List of Request Status::"+responseBoard);
+ 			try{
+ 			JSONObject commentsJson = new JSONObject(responseBoard);
+ 			System.out.println("hi2");
+ 			JSONArray commentsJson1 = (JSONArray)commentsJson.get("ReplyData");
+ 			JSONArray json2 = (JSONArray) commentsJson1.get(0);
+ 			//List<Comments> commentList=new ArrayList<Comments>();
+ 			for(int i=0; i<json2.length();i++){
+ 				JSONObject commentsJson2 = (JSONObject) json2.get(i);
+ 				System.out.println("Title from view##"+commentsJson2.getString("Title"));
+ 			}
  			response.getWriter().append(responseBoard);
+ 			}catch(Exception e){
+ 				System.out.println("exception occured "+e);
+ 			}
  			//RequestDispatcher view = request.getRequestDispatcher("/viewListForm.jsp");
             //view.forward(request, response);
  			//responseBoard = http.getAllCards();
@@ -207,10 +221,10 @@ private CSAManagerDao dao;
         	String status=json2.getString("LaneTitle");
         	String lastUpdatedDate=json2.getString("LastActivity");  
         	System.out.println("lastUpdatedDate  "+lastUpdatedDate);
-        	//String assignedTo=json2.getJSONArray(json2.getString("AssignedUsers")).toString();
+        	String assignedTo=json2.getString("AssignedUserName");
         	CSAMInfo csamInfo=new CSAMInfo();
         	csamInfo=dao.getCardDetails(request.getParameter("cardid"));
-        	//csamInfo.setAssignedTo(assignedTo);
+        	csamInfo.setAssignedTo(assignedTo);
         	csamInfo.setCardStatus(status);
         	csamInfo.setLastUpdatedDate(lastUpdatedDate);
         	csamInfo.setPriority(priority);
@@ -221,12 +235,26 @@ private CSAManagerDao dao;
         	
         	String lastComments = getCardComments();
  			responseBoard = responseBoard+","+lastComments;
- 			System.out.println("CardDetails  $$"+responseBoard);
  			
- 			System.out.println("Comments  $$"+lastComments);
+ 			JSONObject commentsJson = new JSONObject(lastComments);
+ 			System.out.println("hi2");
+ 			JSONArray commentsJson1 = (JSONArray)commentsJson.get("ReplyData");
+ 			List<Comments> commentList=new ArrayList<Comments>();
+ 			for(int i=0; i<commentsJson1.length();i++){
+ 				JSONObject commentsJson2 = (JSONObject) commentsJson1.get(i);
+ 				Comments comment=new Comments();
+ 				comment.setPostedBy(json2.getString("PostedByFullName"));
+ 				comment.setPostDate(json2.getString("Text"));
+ 				comment.setComment(json2.getString("Text"));
+ 				commentList.add(comment);
+ 			}
+ 			
+ 			//System.out.println("CardDetails  $$"+responseBoard);
+ 			
+ 			//System.out.println("Comments  $$"+lastComments);
  			
  			//dao.getCardDetails(request.getParameter("cardid"));
- 			
+ 			request.setAttribute("CommentsList", commentList);
  			request.setAttribute("cardDeatils", csamInfo);
         	
  			}catch(Exception e){

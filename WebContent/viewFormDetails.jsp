@@ -74,21 +74,18 @@
   					<td class="col-lg-4 col-md-4 col-sm-4"><p class='small-title'>Posted By</p></td>
   					<td class="col-lg-5 col-md-5 col-sm-5"><p class='small-title'>Posted By</p></td>
   				</tr>
+  				<%
+  				List<Comments> commentList=(List<Comments>)request.getAttribute("CommentsList"); 
+	 			   Iterator itr=commentList.iterator();
+	 			   while(itr.hasNext()){
+	 				  Comments comment=(Comments)itr.next();
+  				%>
   				<tr>
-  					<td class="col-lg-3 col-md-3 col-sm-3"><p>10/14/2015</p></td>
-  					<td class="col-lg-4 col-md-4 col-sm-4"><p>Sridhar Kunchala</p></td>
-  					<td class="col-lg-5 col-md-5 col-sm-5"><p>Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text. Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text.</p></td>
+  					<td class="col-lg-3 col-md-3 col-sm-3"><p><%=comment.getPostDate()%></p></td>
+  					<td class="col-lg-4 col-md-4 col-sm-4"><p><%=comment.getPostedBy()%></p></td>
+  					<td class="col-lg-5 col-md-5 col-sm-5"><%=comment.getComment()%></td>
   				</tr>
-  				<tr>
-  					<td class="col-lg-3 col-md-3 col-sm-3"><p>10/14/2015</p></td>
-  					<td class="col-lg-4 col-md-4 col-sm-4"><p>Sridhar Kunchala</p></td>
-  					<td class="col-lg-5 col-md-5 col-sm-5"><p>Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text. Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text.</p></td>
-  				</tr>
-  				<tr>
-  					<td class="col-lg-3 col-md-3 col-sm-3"><p>10/14/2015</p></td>
-  					<td class="col-lg-4 col-md-4 col-sm-4"><p>Sridhar Kunchala</p></td>
-  					<td class="col-lg-5 col-md-5 col-sm-5"><p>Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text. Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text.</p></td>
-  				</tr>
+  				<%}%>
   			</table>
   			</div>
   		</div>
