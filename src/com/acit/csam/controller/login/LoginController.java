@@ -33,18 +33,21 @@ public class LoginController extends HttpServlet {
         String userName=request.getParameter("userName");
         String forward="";
         try{
+        	
 	        boolean status=dao.validateUser(userName, request.getParameter("password"));
 	        System.out.println("userid"+userName);  
 	        System.out.println("status of user "+status);
 	        HttpSession session = request.getSession();
 	        //session.setAttribute("userName", "Guest");
 	        session.setMaxInactiveInterval(600);
+	        
 	    	request.setAttribute("userId", userName);
 	        if(status){
 	        	forward=ADD_REQUEST;
+	        	session.setAttribute("userName", userName);
 	        	/*SkillInfo skillInfo=new SkillInfo();
 	        	skillInfo=dao.getUserDetails(userName);
-	        	session.setAttribute("userName", userName); 
+	        	 
 	        	request.setAttribute("userDetails", skillInfo);
 	
 	        	if(skillInfo.getEmployeeRole().equalsIgnoreCase("user")){
