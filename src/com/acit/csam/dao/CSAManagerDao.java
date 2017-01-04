@@ -40,8 +40,8 @@ public class CSAManagerDao {
 			
 			preparedStatement = connection.prepareStatement(queryString.toString());
 			//System.out.println("update query String ##"+queryString.toString());
-			preparedStatement.setString(1, new Date().toString());
-			preparedStatement.setString(2, Math.random()+"");
+			preparedStatement.setString(1, System.currentTimeMillis()+"");
+			preparedStatement.setString(2, csamInfo.getRequesterId());
 			preparedStatement.setString(3, csamInfo.getCloudService());
             preparedStatement.setString(4, csamInfo.getPriority());
             preparedStatement.setString(5,csamInfo.getBusinessDesc());

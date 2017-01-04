@@ -1,33 +1,23 @@
 package com.acit.csam.controller.createrequest;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
+import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.commons.codec.binary.Base64;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -91,7 +81,7 @@ private CSAManagerDao dao;
     	 response.setContentType("text/html");
          String responseBoard = "";
          CSARService http = new CSARService();
-        
+         final String VIEW_STATUS = "/viewListForm.jsp";
  		String searchRequest = request.getParameter("req");
  		//System.out.println("search request is------->"+searchRequest);
  		if(searchRequest.equals("create")){
@@ -115,6 +105,7 @@ private CSAManagerDao dao;
         	csamInfo.setCloudServiceUrl(cloudServiceUrl);
 			csamInfo.setLob(lob);			
 			csamInfo.setCardTitle(requestorId+cloudService+lob);
+			csamInfo.setRequesterId(requestorId);
 			System.out.println("Card Title##"+csamInfo.getCardTitle());
  			Utility.CARD_TITLE = requestorId+cloudService+lob;
  			Utility.CARD_DESCRIPTION = businessDesc;
@@ -137,11 +128,14 @@ private CSAManagerDao dao;
 			
 			boolean status=dao.createCSAR(csamInfo);
  			if(status){
- 				response.getWriter().append("Data saved to DB "+status);
+ 				//response.getWriter().append("Data saved to DB "+status);
  			}
  			}catch(Exception e){
  				System.out.println(e);
  			}
+ 			request.setAttribute("CardsList", http.getAllCards());
+ 			RequestDispatcher view = request.getRequestDispatcher(VIEW_STATUS);
+            view.forward(request, response);
  			
  		}else if(searchRequest.equals("view")){
  			responseBoard = http.getAllCards();
