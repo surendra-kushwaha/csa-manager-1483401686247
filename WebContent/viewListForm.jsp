@@ -1,6 +1,7 @@
  <%@ page language="java" pageEncoding="ISO-8859-1"%>
   <%@ page import="java.util.*"%>
   <%@ page import="com.acit.csam.model.CSAMInfo"%>
+  <%@ page import="com.acit.csam.dao.CSAManagerDao"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,12 +12,13 @@
     </head>
     <%
             String err=" ";
-            String userName=null;
+            String userName="";
             if(request.getSession().getAttribute("userName")!=null){
             	userName =request.getSession().getAttribute("userName").toString();
             }else{
             	//response.sendRedirect("LogoutController");
             }
+            //System.out.println("userName @@"+userName);
            
       %>
     <div class="top-big-header-new sub-pages-head container-fluid">
@@ -78,10 +80,8 @@ if(request.getAttribute("addFlag")!=null) {
 			    </thead>
 			    <tbody>
 <%
-   				List<CSAMInfo> reqList=null; 				
- 				if(request.getAttribute("RequestList")!=null){
- 					reqList = (List)request.getAttribute("RequestList");
- 					System.out.println("reqList  ##"+reqList.toString());
+   				CSAManagerDao dao= new CSAManagerDao(); 
+   				List<CSAMInfo> reqList= (List<CSAMInfo>)dao.getRequestaList(userName); 
 	 			   Iterator itr=reqList.iterator();
 	 			   while(itr.hasNext()){
 	 				  CSAMInfo csamInfo=(CSAMInfo)itr.next();
@@ -97,7 +97,7 @@ if(request.getAttribute("addFlag")!=null) {
 			        <td><a href="CSARRequest?req=carddetails&cardid=<%=csamInfo.getCardId()%>">Status Details</a></td>
 			      </tr>
 			       <%}
-   } %>
+    %>
 			    </tbody>
   			</table>
   		</div>
