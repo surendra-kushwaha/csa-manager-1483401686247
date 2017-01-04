@@ -16,7 +16,7 @@
 	<div class="col-lg-6 col-md-6 col-sm-6">
 	<p class="header-h3">Cloud Service Acquisition Manager</p>
 	</div>
-	<div class="col-lg-4 col-md-4 col-sm-2 txt-right" style="margin-top: 20px;">
+	<div class="col-lg-4 col-md-4 col-sm-4 txt-right" style="margin-top: 20px;">
 		<img src="images/Poweredby_ACIT.png">
 	</div>
 </div>
