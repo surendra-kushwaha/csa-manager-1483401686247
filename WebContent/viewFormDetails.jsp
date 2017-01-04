@@ -1,24 +1,11 @@
- <%@ page language="java" pageEncoding="ISO-8859-1"%>
-  <%@ page import="java.util.*"%>
-  <%@ page import="com.acit.csam.model.CSAMInfo"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>View List Status</title>
+        <title>Status Details</title>
         <link href="lib/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <%
-            String err=" ";
-            String userName=null;
-            if(request.getSession().getAttribute("userName")!=null){
-            	userName =request.getSession().getAttribute("userName").toString();
-            }else{
-            	response.sendRedirect("LogoutController");
-            }
-           
-      %>
     <div class="top-big-header-new sub-pages-head container-fluid">
 
 <div class="top-bar-new row">
@@ -44,120 +31,65 @@
 </div>
 </div>
     <body>
-<%String addFlag;
-if(request.getAttribute("addFlag")!=null) {
-	addFlag=(String)request.getAttribute("addFlag");
-	if(addFlag.equalsIgnoreCase("addSuccess")){
-%>
-<div>Cloud Service Aquisition request has been successfully logged</div>
-<%
-}
-}%>    
-<form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-2 left-menus">
-  		<div class="active"><img src="images/icon_View_Active.png">View Status
-  			<div class="arrow-right" style="margin-top: 0px !important;"></div>
+  		<div><a href="viewListForm.jsp"><img src="images/icon_View_Normal.png">View Status</a>
   		</div>
   		<div><a href="createRequestForm.jsp"><img src="images/icon_Create_normal.png">Create New Request</a></div>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10">
 		<div class="row" style="padding: 30px 60px;">
-		<p class="title-head ">View List of Status</p>
-  		<div class="col-lg-12 col-md-12 col-sm-12">
+		<p class="title-head ">Status Details <span class='back-span'><a href="viewListForm.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href='feedback.jsp'>Feedback</a></span></p>
+  		<div class="col-lg-12 col-md-12 col-sm-12 details-page">
+  			<p><label>Cloud Service</label><span class="colons">:</span><span>Lorem Ipusum Lorem Ipusum</span></p>
+  			<p><label>Line of Business</label><span class="colons">:</span><span>Dummy Text</span></p>
+  			<p><label>Description</label><span class="colons">:</span><span>Description Goes here</span></p>
+  			<p><label>Priority</label><span class="colons">:</span><span>High</span></p>
+  			<p><label>Class of Service</label><span class="colons">:</span><span>Class of Service</span></p>
+  			<p><label>Status</label><span class="colons">:</span><span>Completed</span></p>
+  			<p><label>Last Updated Date</label><span class="colons">:</span><span>10/24/2015</span></p>
+  			<p><label>Assigned To</label><span class="colons">:</span><span>Rajesh, Kanna</span></p>
+  			<p><label>Comments</label></p>
+  			<div class="comments-box" style="margin-bottom: 40px;">
   			<table class="table">
-			    <thead>
-			      <tr>
-			        <th>Cloud Service</th>
-			        <th>Line of Business</th>
-			        <th>Description</th>
-			        <th>Priority</th>
-			        <th>Class of Service</th>
-			        <th>&nbsp;</th>
-			      </tr>
-			    </thead>
-			    <tbody>
-<%
-   				List<CSAMInfo> reqList=null; 				
- 				if(request.getAttribute("RequestList")!=null){
- 					reqList = (List)request.getAttribute("RequestList");
- 					System.out.println("reqList  ##"+reqList.toString());
-	 			   Iterator itr=reqList.iterator();
-	 			   while(itr.hasNext()){
-	 				  CSAMInfo csamInfo=(CSAMInfo)itr.next();
-	 				  //System.out.println("from list cluodService@@"+csamInfo.getCloudService());
-	 				// System.out.println("from list cardId@@"+csamInfo.getCardId());
-   %>
-			      <tr>
-			        <td><%=csamInfo.getCloudService()%></td>
-			        <td><%=csamInfo.getLob()%></td>
-			        <td><%=csamInfo.getBusinessDesc()%></td>
-			        <td><span><%=csamInfo.getPriority()%></span></td>
-			        <td><%=csamInfo.getCos()%></td>
-			        <td><a href="CSARRequest?req=carddetails&cardid=<%=csamInfo.getCardId()%>">Status Details</a></td>
-			      </tr>
-			       <%}
-   } %>
-			    </tbody>
+  				<tr>
+  					<td class="col-lg-3 col-md-3 col-sm-3"><p class='small-title'>Post Date</p></td>
+  					<td class="col-lg-4 col-md-4 col-sm-4"><p class='small-title'>Posted By</p></td>
+  					<td class="col-lg-5 col-md-5 col-sm-5"><p class='small-title'>Posted By</p></td>
+  				</tr>
+  				<tr>
+  					<td class="col-lg-3 col-md-3 col-sm-3"><p>10/14/2015</p></td>
+  					<td class="col-lg-4 col-md-4 col-sm-4"><p>Sridhar Kunchala</p></td>
+  					<td class="col-lg-5 col-md-5 col-sm-5"><p>Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text. Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text.</p></td>
+  				</tr>
+  				<tr>
+  					<td class="col-lg-3 col-md-3 col-sm-3"><p>10/14/2015</p></td>
+  					<td class="col-lg-4 col-md-4 col-sm-4"><p>Sridhar Kunchala</p></td>
+  					<td class="col-lg-5 col-md-5 col-sm-5"><p>Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text. Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text.</p></td>
+  				</tr>
+  				<tr>
+  					<td class="col-lg-3 col-md-3 col-sm-3"><p>10/14/2015</p></td>
+  					<td class="col-lg-4 col-md-4 col-sm-4"><p>Sridhar Kunchala</p></td>
+  					<td class="col-lg-5 col-md-5 col-sm-5"><p>Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text. Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text.</p></td>
+  				</tr>
   			</table>
+  			</div>
   		</div>
   	</div>
 	</div>
-	<div>
-  <!-- 
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-3 control-label">Cloud Service</label>
-    <div class="col-sm-9">
-       <textarea class="form-control" id="businessDesc" name="businessDesc"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-3 control-label">Line of Business</label>
-    <div class="col-sm-9">
-      <textarea class="form-control" id="cos" name="cos"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-3 control-label">Priority</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="priority" name="priority">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-3 control-label">URL of the Cloud Service</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="cloudServiceUrl" name="cloudServiceUrl">
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-3 control-label">Business Description</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="businessDesc" name="businessDesc">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-3 control-label">Class of Service</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="cos" name="cos">
-    </div>
-  </div>
-  
-  
-  <div class="form-group">
-  <div class="col-sm-offset-3" style="padding-left:18px">
-  	 <input type="button" value="reset" class="btn btns resetbtn" style="margin-right: 10px;"/>
-  	 <button type="submit" class="btn btns">Login</button>
-  	 </div>
-  </div>-->
-</form>
-<footer style="background: #b8b8b8">
+	</div>
+	<style>
+		.left-menus {
+			min-height: 1000px;
+		}
+	</style>
+     <script src="lib/js/jquery-1.11.3.min.js"></script>
+                <script src="lib/js/bootstrap.min.js"></script>
+                <script src="scripts/main.js"></script>
+                <footer style="background: #b8b8b8">
          	<div class="footer" style="color: #4b4b4b">
         		Copyright &#169; 2004 - 2017 Accenture. All rights reserved.
         	</div>
         </footer>
-     <script src="lib/js/jquery-1.11.3.min.js"></script>
-                <script src="lib/js/bootstrap.min.js"></script>
-                <script src="scripts/main.js"></script>
 </body>
 </html>
