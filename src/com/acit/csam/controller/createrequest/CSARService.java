@@ -3,6 +3,8 @@ package com.acit.csam.controller.createrequest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -129,11 +131,29 @@ private CSAManagerDao dao;
 			boolean status=dao.createCSAR(csamInfo);
  			if(status){
  				//response.getWriter().append("Data saved to DB "+status);
+ 				//dao.getRequestaList(requestorId);
+ 				request.setAttribute("RequestList", dao.getRequestaList(requestorId));
+ 				request.setAttribute("CardsList", http.getAllCards());
+ 				
+ 				//test in UI
+ 				List<CSAMInfo> reqList=null; 				
+ 				if(request.getAttribute("RequestList")!=null){
+ 					reqList = (List)request.getAttribute("RequestList");
+ 					System.out.println("reqList  ##"+reqList.toString());
+	 			   Iterator itr=reqList.iterator();
+	 			   while(itr.hasNext()){
+	 				  CSAMInfo skillInfo=(CSAMInfo)itr.next();
+	 				  System.out.println("from list cluodService@@"+skillInfo.getCloudService());
+	 				 System.out.println("from list cardId@@"+skillInfo.getCardId());
+	 			   }
+ 			   }
+ 			   
+ 				
  			}
  			}catch(Exception e){
  				System.out.println(e);
  			}
- 			request.setAttribute("CardsList", http.getAllCards());
+ 			//request.setAttribute("CardsList", http.getAllCards());
  			RequestDispatcher view = request.getRequestDispatcher(VIEW_STATUS);
             view.forward(request, response);
  			
