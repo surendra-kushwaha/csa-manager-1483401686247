@@ -342,3 +342,13 @@ footer {
 	}
 	
 }
+
+.success-msg{
+	text-align: center;
+    padding: 6px;
+    border: solid 1px #abddee !important;
+    color: #233f83;
+    display: none;
+    border-radius: 4px;
+    font-weight: bold;
+}

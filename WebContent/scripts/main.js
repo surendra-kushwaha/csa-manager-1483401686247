@@ -1,4 +1,6 @@
 $(document).load(function () {
+	$(".success-msg").fadeIn();
+    setTimeout($(".success-msg").fadeOut(), 15000);
 	/*
 	alert('');
 	$('.priority').each(function () {

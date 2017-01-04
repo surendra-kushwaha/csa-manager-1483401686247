@@ -66,6 +66,15 @@ if(request.getAttribute("addFlag")!=null) {
 	<div class="col-lg-10 col-md-10 col-sm-9">
 		<div class="row pad-adju">
 		<p class="title-head" style="margin-left: 0">View List of Status</p>
+		<%String addFlag;
+if(request.getAttribute("addFlag")!=null) {
+	addFlag=(String)request.getAttribute("addFlag");
+	if(addFlag.equalsIgnoreCase("addSuccess")){
+%>
+<div class="success-msg">Cloud Service Aquisition request has been successfully logged</div>
+<%
+}
+}%> 
   		<div class="table-responsive">
   			<table class="table">
 			    <thead>
