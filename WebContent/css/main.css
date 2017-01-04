@@ -266,6 +266,11 @@ footer {
 	width: 50%;
 }
 
+.login-error {
+	text-align: right;
+    color: red;
+}
+
 .round-box {
 	background: red;
     border-radius: 50%;

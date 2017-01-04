@@ -39,7 +39,7 @@ String inValidUser=null;
 if(request.getAttribute("loginMassage")!=null){
 	inValidUser = (String)request.getAttribute("loginMassage");
 	System.out.println("message recieved::"+inValidUser);
-%>	<div class="login-error"><%=inValidUser%></div>
+%>	<div class="login-error">*&nbsp;<%=inValidUser%></div>
 <%} %>
 
 <%
