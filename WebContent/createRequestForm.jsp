@@ -41,7 +41,7 @@
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9 txt-right">
 		<p class="logged-user"><%=userName%></p>
-		<a href="/" class="logout">Logout</a>
+		<a href="login.jsp" class="logout">Logout</a>
 	</div>
 </div>
 </div>
