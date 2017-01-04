@@ -82,6 +82,7 @@ if(request.getAttribute("addFlag")!=null) {
 <%
    				//CSAManagerDao dao= new CSAManagerDao(); 
    				//List<CSAMInfo> reqList= (List<CSAMInfo>)dao.getRequestaList(userName); 
+   				if(request.getAttribute("cardList")!=null){
    				List<CSAMInfo> reqList= (List<CSAMInfo>)request.getAttribute("cardList");
 	 			   Iterator itr=reqList.iterator();
 	 			   while(itr.hasNext()){
@@ -98,6 +99,7 @@ if(request.getAttribute("addFlag")!=null) {
 			        <td><a href="CSARRequest?req=carddetails&cardid=<%=csamInfo.getCardId()%>">Status Details</a></td>
 			      </tr>
 			       <%}
+			       }
     %>
 			    </tbody>
   			</table>
