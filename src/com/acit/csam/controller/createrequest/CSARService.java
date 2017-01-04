@@ -227,26 +227,26 @@ private CSAManagerDao dao;
     }
     
     private String getPriority(String priority){
-    	if(priority.equals("LOW"))
+    	if(priority.equalsIgnoreCase("LOW"))
     		Utility.CARD_PRIORITY="0";
-    	else if(priority.equals("NORMAL"))
+    	else if(priority.equalsIgnoreCase("NORMAL"))
     		Utility.CARD_PRIORITY="1";
-    	else if(priority.equals("HIGH"))
+    	else if(priority.equalsIgnoreCase("HIGH"))
     		Utility.CARD_PRIORITY="2";
-    	else if(priority.equals("CRITICAL"))
+    	else if(priority.equalsIgnoreCase("CRITICAL"))
     		Utility.CARD_PRIORITY="3";
     	return Utility.CARD_PRIORITY;
     	
     }
     
     private String getClassOfService(String cardClassOfServiceID){
-    	if(cardClassOfServiceID.equals("Date Dependent"))
+    	if(cardClassOfServiceID.equalsIgnoreCase("Date Dependent"))
     		Utility.CARD_CLASS_OF_SERVICE_ID="428201710";
-    	else if(cardClassOfServiceID.equals("Expedite"))
+    	else if(cardClassOfServiceID.equalsIgnoreCase("Expedite"))
     		Utility.CARD_CLASS_OF_SERVICE_ID="428201711";
-    	else if(cardClassOfServiceID.equals("Regulatory"))
+    	else if(cardClassOfServiceID.equalsIgnoreCase("Regulatory"))
     		Utility.CARD_CLASS_OF_SERVICE_ID="428201712";
-    	else if(cardClassOfServiceID.equals("Standard"))
+    	else if(cardClassOfServiceID.equalsIgnoreCase("Standard"))
     		Utility.CARD_CLASS_OF_SERVICE_ID="428201713";
     	return Utility.CARD_CLASS_OF_SERVICE_ID;
     	
