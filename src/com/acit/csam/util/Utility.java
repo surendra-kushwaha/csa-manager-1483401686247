@@ -20,7 +20,7 @@ public class Utility {
 	public static final String SEARCH_ALL_CARD_URL = "https://narry1234.leankit.com/kanban/api/v1/card/search";
 	//public static final String SEARCH_TEXT="";
 	public static String SEARCH_BY_BOARD_ID="428087839";
-	public static final String SEARCH_BY_BOARD_URL="https://narry1234.leankit.com/kanban/api/boards/";
+	public static final String SEARCH_BY_BOARD_URL="https://narry1234.leankit.com/kanban/api/board/";
 	
 	public static final String SEARCH_BY_CARD_URL="https://narry1234.leankit.com/kanban/api/v1/card/";
 	public static final String SEARCH_CARD_COMMENTS_URL = "https://narry1234.leankit.com/kanban/api/card/getcomments/";
