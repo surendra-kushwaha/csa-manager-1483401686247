@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>View List Status</title>
+        <title>Status Details</title>
         <link href="lib/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -34,37 +34,43 @@
 <form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-2 left-menus">
-  		<div class="active"><img src="images/icon_View_Active.png">View Status
-  			<div class="arrow-right" style="margin-top: 0px !important;"></div>
+  		<div><a href="createRequestForm.jsp"><img src="images/icon_View_Normal.png">View Status</a>
   		</div>
   		<div><a href="createRequestForm.jsp"><img src="images/icon_Create_normal.png">Create New Request</a></div>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10">
 		<div class="row" style="padding: 30px 60px;">
-		<p class="title-head ">View List of Status</p>
+		<p class="title-head ">Status Details</p>
   		<div class="col-lg-12 col-md-12 col-sm-12">
-  			<table class="table">
-			    <thead>
-			      <tr>
-			        <th>Cloud Service</th>
-			        <th>Line of Business</th>
-			        <th>Description</th>
-			        <th>Priority</th>
-			        <th>Class of Service</th>
-			        <th>&nbsp;</th>
-			      </tr>
-			    </thead>
-			    <tbody>
-			      <tr>
-			        <td>Lorem Ipusum</td>
-			        <td>Lorem Ipusum</td>
-			        <td>Description Going here...</td>
-			        <td><span>High</span></td>
-			        <td>LoremIpusum</td>
-			        <td><a href="viewFormDetails.jsp">Status Details</a></td>
-			      </tr>
-			    </tbody>
-  			</table>
+  			<p><label>Cloud Service</label><span>:</span><span>1</span></p>
+  			<p><label>Line of Business</label><span>:</span><span>1</span></p>
+  			<p><label>Description</label><span>:</span><span>1</span></p>
+  			<p><label>Priority</label><span>:</span><span>1</span></p>
+  			<p><label>Class of Service</label><span>:</span><span>1</span></p>
+  			<p><label>Status</label><span>:</span><span>1</span></p>
+  			<p><label>Last Updated Date</label><span>:</span><span>1</span></p>
+  			<p><label>Assigned To</label><span>:</span><span>1</span></p>
+  			<p><label>Comments</label></p>
+  			<div class="row">
+  				<div class="col-lg-3 col-md-3 col-sm-3">
+  					<p class='small-title'>Post Date</p>
+  					<p>10/14/2015</p>
+  					<p>10/14/2015</p>
+  					<p>10/14/2015</p>
+  				</div>
+  				<div class="col-lg-4 col-md-4 col-sm-4">
+  					<p class='small-title'>Posted By</p>
+  					<p>Sridhar Kunchala</p>
+  					<p>Sridhar Kunchala</p>
+  					<p>Sridhar Kunchala</p>
+  				</div>
+  				<div class="col-lg-5 col-md-5 col-sm-5">
+  					<p class='small-title'>Comments</p>
+  					<p>Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text. Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text.</p>
+  					<p>Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text. Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text.</p>
+  					<p>Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text. Lorem Ipusem is simply dummy text, Lorem Ipusem is simply dummy text.</p>
+  				</div>
+  			</div>
   		</div>
   	</div>
 	</div>
