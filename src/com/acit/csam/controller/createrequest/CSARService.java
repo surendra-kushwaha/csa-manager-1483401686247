@@ -172,7 +172,7 @@ private CSAManagerDao dao;
  			Utility.SEARCH_TEXT =  request.getParameter("userId");///////////////New line added by Bibek
  			responseBoard = http.getCardsByBoard();///////////////New line added by Bibek
  			System.out.println("List of Request Status::"+responseBoard);
- 			
+ 			response.getWriter().append(responseBoard);
  			//RequestDispatcher view = request.getRequestDispatcher("/viewListForm.jsp");
             //view.forward(request, response);
  			//responseBoard = http.getAllCards();
@@ -182,28 +182,35 @@ private CSAManagerDao dao;
  			System.out.println("inside Card Details method"+request.getParameter("cardid"));
  			try{
  			responseBoard = http.getCardByID();
+ 			System.out.println("hi1");
  			JSONObject json = new JSONObject(responseBoard);
+ 			System.out.println("hi2");
  			JSONArray json1 = (JSONArray)json.get("ReplyData");
  			JSONObject json2 = (JSONObject) json1.get(0);
+ 			System.out.println("hi3");
  			Utility.SEARCH_BY_BOARD_ID = ""+json2.getInt("BoardId");
  			Utility.LANE_ID = ""+json2.getInt("LaneId");
+ 			System.out.println("hi4");
  			Utility.LANE_TITLE = json2.getString("LaneTitle");
+ 			System.out.println("hi5 "+json2.getString("LaneTitle"));
  			String lastMove = json2.getString("LastMove");
  			
  			//String cloudService=request.getParameter("cloudService");
         	//String lob=request.getParameter("lob");
         	String priority=json2.getString("PriorityText");
+        	System.out.println("hi6 "+priority);
         	String description=json2.getString("Description");
         	//String cloudServiceUrl=request.getParameter("cloudServiceUrl");
         	//String businessDesc=request.getParameter("businessDesc");
         	String cos=json2.getString("ClassOfServiceTitle");
         	//String requestorId=request.getParameter("userId");
         	String status=json2.getString("LaneTitle");
-        	String lastUpdatedDate=json2.getString("LastActivity");        	
-        	String assignedTo=json2.getJSONArray(json2.getString("AssignedUsers")).toString();
+        	String lastUpdatedDate=json2.getString("LastActivity");  
+        	System.out.println("lastUpdatedDate  "+lastUpdatedDate);
+        	//String assignedTo=json2.getJSONArray(json2.getString("AssignedUsers")).toString();
         	CSAMInfo csamInfo=new CSAMInfo();
         	csamInfo=dao.getCardDetails(request.getParameter("cardid"));
-        	csamInfo.setAssignedTo(assignedTo);
+        	//csamInfo.setAssignedTo(assignedTo);
         	csamInfo.setCardStatus(status);
         	csamInfo.setLastUpdatedDate(lastUpdatedDate);
         	csamInfo.setPriority(priority);
