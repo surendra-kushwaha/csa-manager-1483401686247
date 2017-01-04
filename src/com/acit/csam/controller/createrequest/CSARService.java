@@ -174,28 +174,42 @@ private CSAManagerDao dao;
  			Utility.LANE_TITLE = json2.getString("LaneTitle");
  			String lastMove = json2.getString("LastMove");
  			
- 			String cloudService=request.getParameter("cloudService");
-        	String lob=request.getParameter("lob");
+ 			//String cloudService=request.getParameter("cloudService");
+        	//String lob=request.getParameter("lob");
         	String priority=json2.getString("PriorityText");
-        	String cloudServiceUrl=request.getParameter("cloudServiceUrl");
-        	String businessDesc=request.getParameter("businessDesc");
-        	String cos=request.getParameter("cos");
-        	String requestorId=request.getParameter("userId");
+        	String description=json2.getString("Description");
+        	//String cloudServiceUrl=request.getParameter("cloudServiceUrl");
+        	//String businessDesc=request.getParameter("businessDesc");
+        	String cos=json2.getString("ClassOfServiceTitle");
+        	//String requestorId=request.getParameter("userId");
         	String status=json2.getString("LaneTitle");
- 			
+        	String lastUpdatedDate=json2.getString("LastActivity");        	
+        	String assignedTo=json2.getJSONArray(json2.getString("AssignedUsers")).toString();
+        	CSAMInfo csamInfo=new CSAMInfo();
+        	csamInfo=dao.getCardDetails(request.getParameter("cardid"));
+        	csamInfo.setAssignedTo(assignedTo);
+        	csamInfo.setCardStatus(status);
+        	csamInfo.setLastUpdatedDate(lastUpdatedDate);
+        	csamInfo.setPriority(priority);
+        	csamInfo.setBusinessDesc(description);
+        	csamInfo.setCos(cos);
         	System.out.println("Status ## "+status);
         	System.out.println("priority  "+priority);
+        	
+        	String lastComments = getCardComments();
+ 			responseBoard = responseBoard+","+lastComments;
+ 			System.out.println("CardDetails  $$"+responseBoard);
+ 			
+ 			System.out.println("Comments  $$"+lastComments);
+ 			
+ 			//dao.getCardDetails(request.getParameter("cardid"));
+ 			
+ 			request.setAttribute("cardDeatils", csamInfo);
         	
  			}catch(Exception e){
  				System.out.println("Exception occured"+e);
  			}
- 			String lastComments = getCardComments();
- 			responseBoard = responseBoard+","+lastComments;
- 			System.out.println("CardDetails  $$"+responseBoard);
  			
- 			//dao.getCardDetails(request.getParameter("cardid"));
- 			
- 			request.setAttribute("cardDeatils", dao.getCardDetails(request.getParameter("cardid")));
  			RequestDispatcher view = request.getRequestDispatcher("/viewFormDetails.jsp");
             view.forward(request, response);
  			

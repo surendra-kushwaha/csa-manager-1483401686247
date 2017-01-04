@@ -15,7 +15,9 @@ public class CSAMInfo {
 	String cardId;
 	String createdDate;
 	String lob;
-	//String uploadDate;
+	String lastUpdatedDate;
+	String assignedTo;
+	String cardStatus;
 	public String getId() {
 		return Id;
 	}
@@ -81,6 +83,24 @@ public class CSAMInfo {
 	}
 	public void setLob(String lob) {
 		this.lob = lob;
+	}
+	public String getLastUpdatedDate() {
+		return lastUpdatedDate;
+	}
+	public void setLastUpdatedDate(String lastUpdatedDate) {
+		this.lastUpdatedDate = lastUpdatedDate;
+	}
+	public String getAssignedTo() {
+		return assignedTo;
+	}
+	public void setAssignedTo(String assignedTo) {
+		this.assignedTo = assignedTo;
+	}
+	public String getCardStatus() {
+		return cardStatus;
+	}
+	public void setCardStatus(String cardStatus) {
+		this.cardStatus = cardStatus;
 	}
 	
 	
