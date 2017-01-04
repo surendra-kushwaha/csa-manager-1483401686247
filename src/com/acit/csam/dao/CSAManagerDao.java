@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.acit.csam.exception.CSAMException;
 import com.acit.csam.model.CSAMInfo;
@@ -158,37 +158,46 @@ public class CSAManagerDao {
 		//return false;
 	}
 	
-	/*public SkillInfo getUserDetails(String userId) {
+	public List<CSAMInfo> getRequestaList(String requestorId) {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		SkillInfo skillInfo=new SkillInfo();
+		List<CSAMInfo> requestList=new ArrayList<CSAMInfo>();
 		try {
 			if ((connection == null) || connection.isClosed() ) {
 				//con.DriverManager.getConnection(...);
 				connection =  DataBase.getInstance().getConnection();
 		    }
 			ps = connection
-					.prepareStatement("select * from \"MULTI_SKILLING_DATA\" where \"ENTERPRIZE_ID\"=?");
-			ps.setString(1, userId);
+					.prepareStatement("select * from \"CSAR\" where \"REQUESTOR_ID\"=?");
+			ps.setString(1, requestorId);
 			//ps.setString(2, password);
 			rs = ps.executeQuery();
 			while (rs.next()){
-				skillInfo.setEmployeeName(rs.getString("EMPLOYEE_NAME"));
-				skillInfo.setEnterprizeId(rs.getString("ENTERPRIZE_ID"));
-				skillInfo.setEmployeeId(rs.getString("EMPLOYEE_ID"));
-				skillInfo.setEmployeeRole(rs.getString("EMPLOYEE_ROLE"));
-				skillInfo.setSkillRole(rs.getString("SKILL_ROLE"));
-				skillInfo.setCertUploadFlag(rs.getString("CERT_UPLOAD_FLAG"));
-				skillInfo.setWorkLocation(rs.getString("WORK_LOCATION"));
+				CSAMInfo csamInfo=new CSAMInfo();
+				csamInfo.setId(rs.getString("ID"));
+				csamInfo.setRequesterId(rs.getString("REQUESTOR_ID"));
+				csamInfo.setCloudService(rs.getString("CLOUD_SERVICE"));
+				csamInfo.setPriority(rs.getString("PRIORITY"));
+				csamInfo.setBusinessDesc(rs.getString("BUSSINESS_DESC"));
+				csamInfo.setCos(rs.getString("CoS"));
+				csamInfo.setCloudServiceUrl(rs.getString("CLOUD_SERVICE_URL"));
+				
+				csamInfo.setCardTitle(rs.getString("CARD_TITLE"));
+				csamInfo.setCardId(rs.getString("CARD_ID"));
+				csamInfo.setCreatedDate(rs.getString("CREATED_DATE"));
+				csamInfo.setLob(rs.getString("LOB"));
+				System.out.println("skillInfo##"+csamInfo.toString());
+				requestList.add(csamInfo);
+				
 			} 
-			System.out.println("skillInfo##"+skillInfo);
+			//System.out.println("skillInfo##"+skillInfo);
 		} catch (Exception ex) {
 			System.out.println("Error in check() -->" + ex.getMessage());
 		}finally{
 			close(rs,ps,connection);
 		}
-		return skillInfo;
-	}*/
+		return requestList;
+	}
 	
 	public void close(ResultSet rs, PreparedStatement pstmt, Connection conn){
 		if (rs!=null){
