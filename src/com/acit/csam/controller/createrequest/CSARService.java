@@ -119,7 +119,7 @@ private CSAManagerDao dao;
  			Utility.CARD_DESCRIPTION = businessDesc;
  			Utility.CARD_PRIORITY = http.getPriority(priority);
  			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(cos);
- 			Utility.CLOUD_SERVICE_URL = cloudService;
+ 			Utility.CLOUD_SERVICE_URL = cloudServiceUrl;
  			responseBoard = http.createCard();
  			 
  			//Parse response
@@ -169,7 +169,13 @@ private CSAManagerDao dao;
             view.forward(request, response);
  			
  		}else if(searchRequest.equals("view")){
- 			responseBoard = http.getAllCards();
+ 			Utility.SEARCH_TEXT =  request.getParameter("userId");///////////////New line added by Bibek
+ 			responseBoard = http.getCardsByBoard();///////////////New line added by Bibek
+ 			System.out.println("List of Request Status::"+responseBoard);
+ 			
+ 			RequestDispatcher view = request.getRequestDispatcher("/viewListForm.jsp");
+            view.forward(request, response);
+ 			//responseBoard = http.getAllCards();
  		}else if(searchRequest.equals("carddetails")){
  			//System.out.println("search request is 222------->"+searchRequest);
  			Utility.SEARCH_BY_CARD_ID = request.getParameter("cardid");
@@ -366,6 +372,55 @@ private CSAManagerDao dao;
 		HttpResponse response = client.execute(post);
 
 		System.out.println("\nSending 'GET' request to URL : " + Utility.SEARCH_ALL_CARD_URL);
+		System.out.println("Response Code : " +
+                       response.getStatusLine().getStatusCode());
+
+		BufferedReader rd = new BufferedReader(
+                       new InputStreamReader(response.getEntity().getContent()));
+
+		result = new StringBuffer();
+		String line = "";
+		while ((line = rd.readLine()) != null) {
+			result.append(line);
+		}
+
+		System.out.println(result.toString());
+		}catch(Exception e){
+			System.out.println("Exception is---"+e.toString());
+		}
+		return result.toString();
+	}
+    private String getCardsByBoard()  {////////////////Method name changed from getAllBoards to getCardsByBoard
+
+    	StringBuffer result = null;
+		JSONObject json = new JSONObject();//////////////New line added
+		try{
+		HttpClient client = new DefaultHttpClient();
+		HttpPost post = new HttpPost(Utility.SEARCH_BY_BOARD_URL+Utility.BOARD_ID+"/searchcards");///////////The parametr changed from Utility.ALL_BOARD_URL.Method also changed HttpGet to HttpPost
+
+		// add request header
+		Base64 b = new Base64();
+        String encoding = b.encodeAsString(new String(Utility.USER_NAME+":"+Utility.PASSWORD).getBytes());
+		
+		post.addHeader("Content-Type", "application/json");/////////////changed the object from request to post 
+		post.addHeader("Accept", "application/json");/////////////changed the object from request to post
+		post.addHeader("Authorization", "Basic " + encoding);/////////////changed the object from request to post
+		/////////////////////Completely new added///////////////////////
+		json.put("SearchTerm",Utility.SEARCH_TEXT);
+		json.put("SearchInBacklog",true);
+		json.put("SearchInBoard",true);
+		json.put("SearchInRecentArchive",true);
+		json.put("SearchInOldArchive",true);
+		json.put("IncludeComments",true);
+		json.put("IncludeTags",true);
+		json.put("Page",1);
+		json.put("MaxResults",50);
+		StringEntity params = new StringEntity(json.toString());
+		post.setEntity(params);
+		/////////////////////ENDDDD///////////////////////
+		HttpResponse response = client.execute(post);
+
+		System.out.println("\nSending 'GET' request to URL : " + Utility.ALL_BOARD_URL);
 		System.out.println("Response Code : " +
                        response.getStatusLine().getStatusCode());
 

@@ -18,7 +18,7 @@ public class Utility {
 	
 	
 	public static final String SEARCH_ALL_CARD_URL = "https://narry1234.leankit.com/kanban/api/v1/card/search";
-	public static final String SEARCH_TEXT="";
+	//public static final String SEARCH_TEXT="";
 	public static String SEARCH_BY_BOARD_ID="428087839";
 	public static final String SEARCH_BY_BOARD_URL="https://narry1234.leankit.com/kanban/api/boards/";
 	
@@ -30,6 +30,7 @@ public class Utility {
 	public static String CARD_PRIORITY="0";
 	public static String CARD_CLASS_OF_SERVICE_ID="428201712";
 	public static String CLOUD_SERVICE_URL="";
+	public static String SEARCH_TEXT="";
 	
 
 }
