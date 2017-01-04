@@ -70,11 +70,11 @@
 		  <div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Priority</label>
 		  	<select class="form-control" id="priority" name="priority" required>
-		  		<option value="">Select Priority</option>
-		  		<option value="Low">Low</option>
+		  		<option value="">Select Priority</option>		  		
 		  		<option value="Critical">Critical</option>
 		  		<option value="High">High</option>
 		  		<option value="Normal">Normal</option>
+		  		<option value="Low">Low</option>
 		  	</select>
 		  </div>
 		  <div class="form-group" style="margin-bottom: 0">
