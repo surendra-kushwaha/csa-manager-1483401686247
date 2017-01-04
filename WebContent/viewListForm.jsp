@@ -92,7 +92,7 @@ if(request.getAttribute("addFlag")!=null) {
 			        <td><%=csamInfo.getCloudService()%></td>
 			        <td><%=csamInfo.getLob()%></td>
 			        <td><%=csamInfo.getBusinessDesc()%></td>
-			        <td><span><%=csamInfo.getPriority()%></span></td>
+			        <td><span class='priority'><%=csamInfo.getPriority()%></span></td>
 			        <td><%=csamInfo.getCos()%></td>
 			        <td><a href="CSARRequest?req=carddetails&cardid=<%=csamInfo.getCardId()%>">Status Details</a></td>
 			      </tr>
