@@ -94,5 +94,10 @@
      <script src="lib/js/jquery-1.11.3.min.js"></script>
                 <script src="lib/js/bootstrap.min.js"></script>
                 <script src="scripts/main.js"></script>
+                <footer style="background: #b8b8b8">
+         	<div class="footer" style="color: #4b4b4b">
+        		Copyright &#169; 2004 - 2017 Accenture. All rights reserved.
+        	</div>
+        </footer>
 </body>
 </html>

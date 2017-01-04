@@ -50,7 +50,7 @@
   			<p><label>Last Updated Date</label><span class="colons">:</span><span>10/24/2015</span></p>
   			<p><label>Assigned To</label><span class="colons">:</span><span>Rajesh, Kanna</span></p>
   			<p><label>Comments</label></p>
-  			<div class="comments-box">
+  			<div class="comments-box" style="margin-bottom: 40px;">
   			<table class="table">
   				<tr>
   					<td class="col-lg-3 col-md-3 col-sm-3"><p class='small-title'>Post Date</p></td>
@@ -77,7 +77,7 @@
   		</div>
   	</div>
 	</div>
-	<div>
+	</div>
 	<style>
 		.left-menus {
 			min-height: 1000px;
@@ -86,5 +86,10 @@
      <script src="lib/js/jquery-1.11.3.min.js"></script>
                 <script src="lib/js/bootstrap.min.js"></script>
                 <script src="scripts/main.js"></script>
+                <footer style="background: #b8b8b8">
+         	<div class="footer" style="color: #4b4b4b">
+        		Copyright &#169; 2004 - 2017 Accenture. All rights reserved.
+        	</div>
+        </footer>
 </body>
 </html>

@@ -9,7 +9,7 @@
         <link href="lib/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
+    <body style="overflow: hidden;">
 <div class="top-big-header-new sub-pages-head container-fluid">
 
 <div class="top-bar-new row">
@@ -67,8 +67,13 @@ if(session!=null){
   <button type="submit" class="btn btns">Login</button>
 </form>
         </div></div>
+         <footer>
+         	<div class="footer">
+        		Copyright &#169; 2004 - 2017 Accenture. All rights reserved.
+        	</div>
+        </footer>
         </div>
-        </div>
+
     </body>
     <script>
    					var errormsgs="";
