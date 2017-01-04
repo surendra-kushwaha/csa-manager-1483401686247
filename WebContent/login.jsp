@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-<div class="top-big-header-new sub-pages-head">
+<div class="top-big-header-new sub-pages-head container-fluid">
 
 <div class="top-bar-new row">
 	<div class="col-lg-2 col-md-2 col-sm-2">

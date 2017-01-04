@@ -39,16 +39,16 @@
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10">
 		<div class="row" style="padding: 30px 60px;">
-		<p class="title-head ">Status Details</p>
+		<p class="title-head ">Status Details <span class='back-span'><a href="viewListForm.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href=''>Feedback</a></span></p>
   		<div class="col-lg-12 col-md-12 col-sm-12 details-page">
-  			<p><label>Cloud Service</label><span class="colons">:</span><span>1</span></p>
-  			<p><label>Line of Business</label><span class="colons">:</span><span>1</span></p>
-  			<p><label>Description</label><span class="colons">:</span><span>1</span></p>
-  			<p><label>Priority</label><span class="colons">:</span><span>1</span></p>
-  			<p><label>Class of Service</label><span class="colons">:</span><span>1</span></p>
-  			<p><label>Status</label><span class="colons">:</span><span>1</span></p>
-  			<p><label>Last Updated Date</label><span class="colons">:</span><span>1</span></p>
-  			<p><label>Assigned To</label><span class="colons">:</span><span>1</span></p>
+  			<p><label>Cloud Service</label><span class="colons">:</span><span>Lorem Ipusum Lorem Ipusum</span></p>
+  			<p><label>Line of Business</label><span class="colons">:</span><span>Dummy Text</span></p>
+  			<p><label>Description</label><span class="colons">:</span><span>Description Goes here</span></p>
+  			<p><label>Priority</label><span class="colons">:</span><span>High</span></p>
+  			<p><label>Class of Service</label><span class="colons">:</span><span>Class of Service</span></p>
+  			<p><label>Status</label><span class="colons">:</span><span>Completed</span></p>
+  			<p><label>Last Updated Date</label><span class="colons">:</span><span>10/24/2015</span></p>
+  			<p><label>Assigned To</label><span class="colons">:</span><span>Rajesh, Kanna</span></p>
   			<p><label>Comments</label></p>
   			<div class="comments-box">
   			<table class="table">

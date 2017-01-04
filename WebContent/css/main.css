@@ -195,3 +195,29 @@ table.table {
 .comments-box .table, .comments-box .table tr td {
 	border: 0;
 }
+
+.back-span {
+	display: inline-block;
+    width: 60%;
+    text-align: right;
+    margin-right: 4%;
+    text-transform: Uppercase;
+}
+.back-span a{
+	font-size: 12px;
+    text-decoration: underline;
+    color: #00aeef;
+}
+
+.right-btn {
+	background-color: #00aeef;
+    border: 1px solid #13bfff;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.feedback-span {
+	margin-top: -10px;
+	width: 178px;
+    display: inline-flex;
+}
