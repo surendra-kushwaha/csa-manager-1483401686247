@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <%
-    String userId=(String)session.getAttribute("userId");
-    Syste.out.println("userid recieved in session"+userId);
+   // String userId=(String)session.getAttribute("userId");
+    //Syste.out.println("userid recieved in session"+userId);
     %>
     <%
             String err=" ";
@@ -97,7 +97,7 @@
 		  		<option value="Expedite">Expedite</option>
 		  		<option value="Standard">Standard</option>
 		  	</select>
-		  	<input type="hidden" name="userId" value="<%=userId%>"/>
+		  	<input type="hidden" name="userId" value="<%=userName%>"/>
 		  	<input type="hidden" name="req" value="create"/>
 		  </div>
   		</div>
