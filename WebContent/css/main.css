@@ -348,7 +348,7 @@ footer {
     padding: 6px;
     border: solid 1px #abddee !important;
     color: #233f83;
-    display: none;
+    display: block;
     border-radius: 4px;
     font-weight: bold;
 }

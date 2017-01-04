@@ -44,7 +44,7 @@
     <body>
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
-  		<div><a href="viewListForm.jsp"><img src="images/icon_View_Normal.png">View Status</a>
+  		<div><a href="CSARRequest?req=view"><img src="images/icon_View_Normal.png">View Status</a>
   		</div>
   		<div><a href="createRequestForm.jsp"><img src="images/icon_Create_normal.png">Create New Request</a></div>
 	</div>
