@@ -92,7 +92,7 @@ private CSAManagerDao dao;
  			Utility.CARD_DESCRIPTION = request.getParameter("description");
  			Utility.CARD_PRIORITY = http.getPriority(request.getParameter("priority"));
  			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(request.getParameter("classservice"));*/
- 			System.out.println("inside Card Details method");
+ 			
  			String cloudService=request.getParameter("cloudService");
         	String lob=request.getParameter("lob");
         	String priority=request.getParameter("priority");
@@ -173,12 +173,13 @@ private CSAManagerDao dao;
  			responseBoard = http.getCardsByBoard();///////////////New line added by Bibek
  			System.out.println("List of Request Status::"+responseBoard);
  			
- 			RequestDispatcher view = request.getRequestDispatcher("/viewListForm.jsp");
-            view.forward(request, response);
+ 			//RequestDispatcher view = request.getRequestDispatcher("/viewListForm.jsp");
+            //view.forward(request, response);
  			//responseBoard = http.getAllCards();
  		}else if(searchRequest.equals("carddetails")){
  			//System.out.println("search request is 222------->"+searchRequest);
  			Utility.SEARCH_BY_CARD_ID = request.getParameter("cardid");
+ 			System.out.println("inside Card Details method"+request.getParameter("cardid"));
  			try{
  			responseBoard = http.getCardByID();
  			JSONObject json = new JSONObject(responseBoard);
