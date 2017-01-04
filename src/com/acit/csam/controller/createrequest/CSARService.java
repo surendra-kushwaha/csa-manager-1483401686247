@@ -132,7 +132,7 @@ private CSAManagerDao dao;
  			if(status){
  				//response.getWriter().append("Data saved to DB "+status);
  				//dao.getRequestaList(requestorId);
- 				request.setAttribute("RequestList", dao.getRequestaList(requestorId));
+ 				//request.setAttribute("RequestList", dao.getRequestaList(requestorId));
  				request.setAttribute("addFlag", "addSuccess");
  				//request.setAttribute("CardsList", http.getAllCards());
  				
