@@ -119,6 +119,7 @@ private CSAManagerDao dao;
  			Utility.CARD_DESCRIPTION = businessDesc;
  			Utility.CARD_PRIORITY = http.getPriority(priority);
  			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(cos);
+ 			Utility.CLOUD_SERVICE_URL = cloudService;
  			responseBoard = http.createCard();
  			 
  			//Parse response
@@ -306,7 +307,7 @@ private CSAManagerDao dao;
 		json.put("Description", Utility.CARD_DESCRIPTION);
 		json.put("TypeId", Utility.TYPE_ID);
 		json.put("Priority", Utility.CARD_PRIORITY);
-		json.put("ExternalSystemUrl", "http://ourcompanycms.com/1234");
+		json.put("ExternalSystemUrl", Utility.CLOUD_SERVICE_URL );
 		json.put("ClassOfServiceId", Utility.CARD_CLASS_OF_SERVICE_ID);
 		StringEntity params = new StringEntity(json.toString());
 

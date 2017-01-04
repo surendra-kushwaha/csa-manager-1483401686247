@@ -29,6 +29,7 @@ public class Utility {
 	public static String CARD_DESCRIPTION="";
 	public static String CARD_PRIORITY="0";
 	public static String CARD_CLASS_OF_SERVICE_ID="428201712";
+	public static String CLOUD_SERVICE_URL="";
 	
 
 }
