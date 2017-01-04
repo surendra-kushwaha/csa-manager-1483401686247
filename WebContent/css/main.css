@@ -78,6 +78,7 @@ body {
 	font-weight: 600;
 	color: #333333;
 	margin: 15px 0 0;
+	text-transform: capitalize;
 }
 
 .menu-links {
