@@ -44,7 +44,7 @@
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10">
 		<div class="row" style="padding: 30px 60px;">
-		<p class="title-head ">Cloud Service Acquisition Request (CSAR)</p>
+		<p class="title-head">Cloud Service Acquisition Request (CSAR)</p>
   		<div class="col-lg-5 col-md-5 col-sm-5">
   			<div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Cloud Service</label>
@@ -68,6 +68,7 @@
 		    <input type="text" class="form-control" id="cloudServiceUrl" name="cloudServiceUrl">
 		  </div>
   		</div>
+  		<div class="col-lg-1 col-md-1 col-sm-1">&nbsp;</div>
   		<div class="col-lg-5 col-md-5 col-sm-5">
   			<div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Business Description</label>
@@ -88,7 +89,7 @@
   		</div>
   	</div>
 	</div>
-	<div>
+	</div>
   <button type="submit" class="btn btns btns-right">Create Request</button>
   <!-- 
   <div class="form-group">
@@ -137,6 +138,11 @@
   	 </div>
   </div>-->
 </form>
+<style>
+	.form-horizontal .form-group {
+		margin-bottom: 30px;
+	}
+</style>
      <script src="lib/js/jquery-1.11.3.min.js"></script>
                 <script src="lib/js/bootstrap.min.js"></script>
                 <script src="scripts/main.js"></script>
