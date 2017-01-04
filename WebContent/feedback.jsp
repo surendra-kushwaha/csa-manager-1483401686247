@@ -40,7 +40,7 @@
 	<div class="col-lg-10 col-md-10 col-sm-9">
 		<div class="row pad-adju">
 		    <h4 style='color: red'>Page still in construction </h4>
-		<p class="title-head ">Customer Satisfaction Survey <span class='back-span'><a href="viewFormDetails.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href=''>Submit</a></span></p>
+		<p class="title-head "><label>Customer Satisfaction Survey </label><span class='back-span'><a href="viewFormDetails.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href=''>Submit</a></span></p>
   		<div class="col-lg-12 col-md-12 col-sm-12 details-page">
   			<div class='feedback-line'>
   			<p>Has CCSC staff improved your experience with SaaS onboarding process?</p>
