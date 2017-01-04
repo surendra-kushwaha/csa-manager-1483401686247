@@ -106,7 +106,7 @@ private CSAManagerDao dao;
         	csamInfo.setPriority(priority);
         	csamInfo.setCloudServiceUrl(cloudServiceUrl);
 			csamInfo.setLob(lob);			
-			csamInfo.setCardTitle(requestorId+cloudService+lob);
+			csamInfo.setCardTitle(cloudService+" "+lob+" "+requestorId);
 			csamInfo.setRequesterId(requestorId);
 			System.out.println("Card Title##"+csamInfo.getCardTitle());
  			Utility.CARD_TITLE = requestorId+cloudService+lob;
@@ -133,9 +133,11 @@ private CSAManagerDao dao;
  				//response.getWriter().append("Data saved to DB "+status);
  				//dao.getRequestaList(requestorId);
  				request.setAttribute("RequestList", dao.getRequestaList(requestorId));
- 				request.setAttribute("CardsList", http.getAllCards());
+ 				request.setAttribute("addFlag", "addSuccess");
+ 				//request.setAttribute("CardsList", http.getAllCards());
  				
- 				//test in UI
+ 				
+ 				/*test in UI
  				List<CSAMInfo> reqList=null; 				
  				if(request.getAttribute("RequestList")!=null){
  					reqList = (List)request.getAttribute("RequestList");
@@ -146,7 +148,7 @@ private CSAManagerDao dao;
 	 				  System.out.println("from list cluodService@@"+skillInfo.getCloudService());
 	 				 System.out.println("from list cardId@@"+skillInfo.getCardId());
 	 			   }
- 			   }
+ 			   }*/
  			   
  				
  			}

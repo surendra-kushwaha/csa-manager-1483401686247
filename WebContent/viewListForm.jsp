@@ -1,3 +1,6 @@
+ <%@ page language="java" pageEncoding="ISO-8859-1"%>
+  <%@ page import="java.util.*"%>
+  <%@ page import="com.acit.csam.model.CSAMInfo"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,6 +9,16 @@
         <link href="lib/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
+    <%
+            String err=" ";
+            String userName=null;
+            if(request.getSession().getAttribute("userName")!=null){
+            	userName =request.getSession().getAttribute("userName").toString();
+            }else{
+            	response.sendRedirect("LogoutController");
+            }
+           
+      %>
     <div class="top-big-header-new sub-pages-head container-fluid">
 
 <div class="top-bar-new row">
@@ -31,6 +44,15 @@
 </div>
 </div>
     <body>
+<%String addFlag;
+if(request.getAttribute("addFlag")!=null) {
+	addFlag=(String)request.getAttribute("addFlag");
+	if(addFlag.equalsIgnoreCase("addSuccess")){
+%>
+<div>Cloud Service Aquisition request has been successfully logged</div>
+<%
+}
+}%>    
 <form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-2 left-menus">
@@ -55,14 +77,27 @@
 			      </tr>
 			    </thead>
 			    <tbody>
+<%
+   				List<CSAMInfo> reqList=null; 				
+ 				if(request.getAttribute("RequestList")!=null){
+ 					reqList = (List)request.getAttribute("RequestList");
+ 					System.out.println("reqList  ##"+reqList.toString());
+	 			   Iterator itr=reqList.iterator();
+	 			   while(itr.hasNext()){
+	 				  CSAMInfo csamInfo=(CSAMInfo)itr.next();
+	 				  //System.out.println("from list cluodService@@"+csamInfo.getCloudService());
+	 				// System.out.println("from list cardId@@"+csamInfo.getCardId());
+   %>
 			      <tr>
-			        <td>Lorem Ipusum</td>
-			        <td>Lorem Ipusum</td>
-			        <td>Description Going here...</td>
-			        <td><span>High</span></td>
-			        <td>LoremIpusum</td>
-			        <td><a href="viewFormDetails.jsp">Status Details</a></td>
+			        <td><%=csamInfo.getCloudService()%></td>
+			        <td><%=csamInfo.getLob()%></td>
+			        <td><%=csamInfo.getBusinessDesc()%></td>
+			        <td><span><%=csamInfo.getPriority()%></span></td>
+			        <td><%=csamInfo.getCos()%></td>
+			        <td><a href="viewFormDetails.jsp?cardId=<%=csamInfo.getCardId()%>">Status Details</a></td>
 			      </tr>
+			       <%}
+   } %>
 			    </tbody>
   			</table>
   		</div>
