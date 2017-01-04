@@ -39,7 +39,7 @@
   		<div><a href="createRequestForm.jsp"><img src="images/icon_Create_normal.png">Create New Request</a></div>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9">
-		<div class="row" style="padding: 30px 60px;">
+		<div class="row pad-adju">
 		<p class="title-head ">Status Details <span class='back-span'><a href="viewListForm.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href='feedback.jsp'>Feedback</a></span></p>
   		<%
     if(request.getAttribute("cardDeatils")!=null){

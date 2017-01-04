@@ -38,7 +38,7 @@
   		<div><a href="createRequestForm.jsp"><img src="images/icon_Create_normal.png">Create New Request</a></div>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9">
-		<div class="row" style="padding: 30px 60px;">
+		<div class="row pad-adju">
 		    <h4 style='color: red'>Page still in construction </h4>
 		<p class="title-head ">Customer Satisfaction Survey <span class='back-span'><a href="viewFormDetails.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href=''>Submit</a></span></p>
   		<div class="col-lg-12 col-md-12 col-sm-12 details-page">
