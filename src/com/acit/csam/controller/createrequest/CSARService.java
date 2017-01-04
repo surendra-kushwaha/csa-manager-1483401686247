@@ -178,6 +178,10 @@ private CSAManagerDao dao;
  			}
  			String lastComments = getCardComments();
  			responseBoard = responseBoard+","+lastComments;
+ 			System.out.println("CardDetails  $$"+responseBoard);
+ 			request.setAttribute("cardDeatils", responseBoard);
+ 			RequestDispatcher view = request.getRequestDispatcher("/viewFormDetails.jsp");
+            view.forward(request, response);
  			
  		}
  		
