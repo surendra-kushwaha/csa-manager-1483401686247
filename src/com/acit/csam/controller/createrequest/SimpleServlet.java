@@ -33,7 +33,7 @@ public class SimpleServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
+       /* response.setContentType("text/html");
         String responseBoard = "";
         SimpleServlet http = new SimpleServlet();
        
@@ -52,7 +52,7 @@ public class SimpleServlet extends HttpServlet {
 			Utility.SEARCH_BY_CARD_ID = request.getParameter("cardid");
 			System.out.println("Utility.SEARCH_BY_CARD_ID request is 222------->"+Utility.SEARCH_BY_CARD_ID);
 			responseBoard = http.getCardByID();
-			try{
+			
 			JSONObject json = new JSONObject(responseBoard);
 			JSONArray json1 = (JSONArray)json.get("ReplyData");
 			JSONObject json2 = (JSONObject) json1.get(0);
@@ -62,56 +62,110 @@ public class SimpleServlet extends HttpServlet {
 			String lastMove = json2.getString("LastMove");
 			String lastComments = getCardComments();
 			responseBoard = responseBoard+","+lastComments;
-			}catch(Exception e){
-				System.out.println(e);
-			}
 			
 		}
 		
-        response.getWriter().print(responseBoard);
+        response.getWriter().print(responseBoard);*/
+    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	 response.setContentType("text/html");
+         String responseBoard = "";
+         SimpleServlet http = new SimpleServlet();
+        
+ 		String searchRequest = request.getParameter("req");
+ 		//System.out.println("search request is------->"+searchRequest);
+ 		if(searchRequest.equals("create")){
+ 			Utility.CARD_TITLE = request.getParameter("title");
+ 			Utility.CARD_DESCRIPTION = request.getParameter("description");
+ 			Utility.CARD_PRIORITY = http.getPriority(request.getParameter("priority"));
+ 			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(request.getParameter("classservice"));
+ 			Utility.CLOUD_SERVICE_URL=request.getParameter("url");
+ 			responseBoard = http.createCard();
+ 		}else if(searchRequest.equals("view")){
+ 			Utility.SEARCH_TEXT =  request.getParameter("user");
+ 			responseBoard = http.getCardsByBoard();
+ 		}else if(searchRequest.equals("carddetails")){
+ 			//System.out.println("search request is 222------->"+searchRequest);
+ 			Utility.SEARCH_BY_CARD_ID = request.getParameter("cardid");
+ 			responseBoard = http.getCardByID();
+ 			try{
+ 			JSONObject json = new JSONObject(responseBoard);
+ 			JSONArray json1 = (JSONArray)json.get("ReplyData");
+ 			JSONObject json2 = (JSONObject) json1.get(0);
+ 			Utility.SEARCH_BY_BOARD_ID = ""+json2.getInt("BoardId");
+ 			Utility.LANE_ID = ""+json2.getInt("LaneId");
+ 			Utility.LANE_TITLE = json2.getString("LaneTitle");
+ 			String lastMove = json2.getString("LastMove");
+ 			String lastComments = getCardComments();
+ 			responseBoard = responseBoard+","+lastComments;
+ 			JSONObject jsonObject = new JSONObject(lastComments);
+ 			JSONArray jsondata = jsonObject.getJSONArray("ReplyData");
+ 			System.out.println(jsondata);
+ 			}catch(Exception e){
+ 				
+ 			}
+ 			
+ 			
+ 		}
+ 		
+         response.getWriter().print(responseBoard);
     }
     
     private String getPriority(String priority){
-    	if(priority.equals("LOW"))
+    	if(priority.equalsIgnoreCase("LOW"))
     		Utility.CARD_PRIORITY="0";
-    	else if(priority.equals("NORMAL"))
+    	else if(priority.equalsIgnoreCase("NORMAL"))
     		Utility.CARD_PRIORITY="1";
-    	else if(priority.equals("HIGH"))
+    	else if(priority.equalsIgnoreCase("HIGH"))
     		Utility.CARD_PRIORITY="2";
-    	else if(priority.equals("CRITICAL"))
+    	else if(priority.equalsIgnoreCase("CRITICAL"))
     		Utility.CARD_PRIORITY="3";
     	return Utility.CARD_PRIORITY;
     	
     }
     
     private String getClassOfService(String cardClassOfServiceID){
-    	if(cardClassOfServiceID.equals("Date Dependent"))
+    	if(cardClassOfServiceID.equalsIgnoreCase("Date Dependent"))
     		Utility.CARD_CLASS_OF_SERVICE_ID="428201710";
-    	else if(cardClassOfServiceID.equals("Expedite"))
+    	else if(cardClassOfServiceID.equalsIgnoreCase("Expedite"))
     		Utility.CARD_CLASS_OF_SERVICE_ID="428201711";
-    	else if(cardClassOfServiceID.equals("Regulatory"))
+    	else if(cardClassOfServiceID.equalsIgnoreCase("Regulatory"))
     		Utility.CARD_CLASS_OF_SERVICE_ID="428201712";
-    	else if(cardClassOfServiceID.equals("Standard"))
+    	else if(cardClassOfServiceID.equalsIgnoreCase("Standard"))
     		Utility.CARD_CLASS_OF_SERVICE_ID="428201713";
     	return Utility.CARD_CLASS_OF_SERVICE_ID;
     	
     }
     
-    private String getAllBoards()  {
+    private String getCardsByBoard()  {
 
     	StringBuffer result = null;
+    	JSONObject json = new JSONObject();
 		try{
 		HttpClient client = new DefaultHttpClient();
-		HttpGet request = new HttpGet(Utility.ALL_BOARD_URL);
+		HttpPost post = new HttpPost(Utility.SEARCH_BY_BOARD_URL+Utility.BOARD_ID+"/searchcards");
 
 		// add request header
 		Base64 b = new Base64();
         String encoding = b.encodeAsString(new String(Utility.USER_NAME+":"+Utility.PASSWORD).getBytes());
 		
-		request.addHeader("Content-Type", "application/json");
-		request.addHeader("Accept", "application/json");
-		request.addHeader("Authorization", "Basic " + encoding);
-		HttpResponse response = client.execute(request);
+        post.addHeader("Content-Type", "application/json");
+        post.addHeader("Accept", "application/json");
+        post.addHeader("Authorization", "Basic " + encoding);
+		
+		json.put("SearchTerm",Utility.SEARCH_TEXT);
+		json.put("SearchInBacklog",true);
+		json.put("SearchInBoard",true);
+		json.put("SearchInRecentArchive",true);
+		json.put("SearchInOldArchive",true);
+		json.put("IncludeComments",true);
+		json.put("IncludeTags",true);
+		json.put("Page",1);
+		json.put("MaxResults",50);
+		StringEntity params = new StringEntity(json.toString());
+
+		post.setEntity(params);
+		HttpResponse response = client.execute(post);
 
 		System.out.println("\nSending 'GET' request to URL : " + Utility.ALL_BOARD_URL);
 		System.out.println("Response Code : " +
@@ -151,7 +205,7 @@ public class SimpleServlet extends HttpServlet {
 		json.put("Description", Utility.CARD_DESCRIPTION);
 		json.put("TypeId", Utility.TYPE_ID);
 		json.put("Priority", Utility.CARD_PRIORITY);
-		json.put("ExternalSystemUrl", "http://ourcompanycms.com/1234");
+		json.put("ExternalSystemUrl",Utility.CLOUD_SERVICE_URL);
 		json.put("ClassOfServiceId", Utility.CARD_CLASS_OF_SERVICE_ID);
 		StringEntity params = new StringEntity(json.toString());
 
