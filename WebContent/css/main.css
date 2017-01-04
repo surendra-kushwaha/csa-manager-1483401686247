@@ -297,10 +297,14 @@ footer {
 }
 
 .round-box {
-	background: red;
+	background: #d0cccc;
     border-radius: 50%;
     padding: 10px 12px;
     color: #fff;
+}
+
+.round-box:hover {
+		background: #00aeef;
 }
 
 
