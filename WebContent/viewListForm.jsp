@@ -51,6 +51,7 @@ if(request.getAttribute("addFlag")!=null) {
 %>
 <div>Cloud Service Aquisition request has been successfully logged</div>
 <%
+}
 }%>    
 <form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
 	<div>
