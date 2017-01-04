@@ -52,9 +52,9 @@
   			<p><label>Description</label><span class="colons">:</span><span><%=csamInfo.getBusinessDesc()%></span></p>
   			<p><label>Priority</label><span class="colons">:</span><span><%=csamInfo.getPriority()%></span></p>
   			<p><label>Class of Service</label><span class="colons">:</span><span><%=csamInfo.getCos()%></span></p>
-  			<p><label>Status</label><span class="colons">:</span><span>Completed</span></p>
-  			<p><label>Last Updated Date</label><span class="colons">:</span><span>10/24/2015</span></p>
-  			<p><label>Assigned To</label><span class="colons">:</span><span>Rajesh, Kanna</span></p>
+  			<p><label>Status</label><span class="colons">:</span><span><%=csamInfo.getCardStatus()%></span></p>
+  			<p><label>Last Updated Date</label><span class="colons">:</span><span><%=csamInfo.getLastUpdatedDate()%></span></p>
+  			<p><label>Assigned To</label><span class="colons">:</span><span><%=csamInfo.getAssignedTo()%></span></p>
   			<p><label>Comments</label></p>
   			<div class="comments-box" style="margin-bottom: 40px;">
   			<table class="table">
