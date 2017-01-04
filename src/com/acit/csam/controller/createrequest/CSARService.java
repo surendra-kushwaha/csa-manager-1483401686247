@@ -179,7 +179,10 @@ private CSAManagerDao dao;
  			String lastComments = getCardComments();
  			responseBoard = responseBoard+","+lastComments;
  			System.out.println("CardDetails  $$"+responseBoard);
- 			request.setAttribute("cardDeatils", responseBoard);
+ 			
+ 			//dao.getCardDetails(request.getParameter("cardid"));
+ 			
+ 			request.setAttribute("cardDeatils", dao.getCardDetails(request.getParameter("cardid")));
  			RequestDispatcher view = request.getRequestDispatcher("/viewFormDetails.jsp");
             view.forward(request, response);
  			

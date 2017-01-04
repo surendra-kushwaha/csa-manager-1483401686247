@@ -15,7 +15,7 @@
             if(request.getSession().getAttribute("userName")!=null){
             	userName =request.getSession().getAttribute("userName").toString();
             }else{
-            	response.sendRedirect("LogoutController");
+            	//response.sendRedirect("LogoutController");
             }
            
       %>

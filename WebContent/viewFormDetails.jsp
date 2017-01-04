@@ -1,3 +1,4 @@
+  <%@ page import="com.acit.csam.model.CSAMInfo"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,6 +41,11 @@
 	<div class="col-lg-10 col-md-10 col-sm-10">
 		<div class="row" style="padding: 30px 60px;">
 		<p class="title-head ">Status Details <span class='back-span'><a href="viewListForm.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href='feedback.jsp'>Feedback</a></span></p>
+  		<%
+    if(request.getAttribute("cardDeatils")!=null){
+    	CSAMInfo csamInfo=(CSAMInfo)request.getAttribute("cardDeatils");
+    
+    %>
   		<div class="col-lg-12 col-md-12 col-sm-12 details-page">
   			<p><label>Cloud Service</label><span class="colons">:</span><span>Lorem Ipusum Lorem Ipusum</span></p>
   			<p><label>Line of Business</label><span class="colons">:</span><span>Dummy Text</span></p>
@@ -75,6 +81,9 @@
   			</table>
   			</div>
   		</div>
+  		<%
+			}
+		%>
   	</div>
 	</div>
 	</div>
