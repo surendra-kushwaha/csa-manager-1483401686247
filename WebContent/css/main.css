@@ -101,7 +101,7 @@ body {
 }
 
 .left-menus{
-    min-height: 500px;
+    min-height: 550px;
     background: #F3F3F3;
     padding: 0;
 }
@@ -110,6 +110,11 @@ body {
 	padding: 15px 25px;
 	font-weight : 600;
 	margin: 0;
+}
+
+.left-menus div a{
+	color: #666666 !important;
+	text-decoration: none;
 }
 
 .left-menus img{
@@ -150,4 +155,16 @@ table.table a {
 
 table.table {
 	border: solid 1px rgba(153, 153, 153, 0.19);
+}
+
+.arrow-right {
+  	width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #00aeef;
+    padding: 0 !important;
+    margin-right: -32px !important;
+    margin-top: -23px !important;
+    float: right;
 }

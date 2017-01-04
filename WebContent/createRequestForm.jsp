@@ -38,7 +38,9 @@
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-2 left-menus">
   		<div class=""><a href="viewListForm.jsp"><img src="images/icon_View_Normal.png">View Status</a></div>
-  		<div class="active"><img src="images/icon_Create_Active.png">Create New Request</div>
+  		<div class="active"><img src="images/icon_Create_Active.png">Create New Request
+  			<div class="arrow-right"></div>
+  		</div>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10">
 		<div class="row" style="padding: 30px 60px;">

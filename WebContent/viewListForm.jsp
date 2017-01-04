@@ -34,7 +34,9 @@
 <form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-2 left-menus">
-  		<div class="active"><img src="images/icon_View_Active.png">View Status</div>
+  		<div class="active"><img src="images/icon_View_Active.png">View Status
+  			<div class="arrow-right" style="margin-top: 0px !important;"></div>
+  		</div>
   		<div><a href="createRequestForm.jsp"><img src="images/icon_Create_normal.png">Create New Request</a></div>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-10">
