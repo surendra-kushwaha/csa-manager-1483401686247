@@ -214,10 +214,24 @@ table.table {
 
 .feedback-line ul {
 	padding-left: 0;
+	display: none;
 }
 
 .feedback-line ul li {
 	display: inline-block;
+}
+
+.feedback-forms ul li {
+	display: inline-block;
+	margin: 8px;
+}
+
+.table.borderless {
+	padding: 10px;
+}
+
+table.table.borderless a {
+	text-decoration: none;
 }
 
 footer {
@@ -244,7 +258,7 @@ footer {
 }
 
 .pad-adju {
-	padding: 30px 60px;
+	padding: 30px 40px;
 }
 
 .width100 {
@@ -265,6 +279,16 @@ footer {
 
 .title-head label {
 	width: 50%;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+.table.borderless > thead > tr > th, .table.borderless > tbody > tr > th, 
+.table.borderless > tfoot > tr > th, .table.borderless > thead > tr > td, 
+.table.borderless > tbody > tr > td, .table.borderless > tfoot > tr > td, table.table.borderless {
+	border: none;
 }
 
 .login-error {

@@ -39,49 +39,47 @@
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9">
 		<div class="row pad-adju">
-		    <h4 style='color: red'>Page still in construction </h4>
 		<p class="title-head "><label>Customer Satisfaction Survey </label><span class='back-span'><a href="viewFormDetails.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href=''>Submit</a></span></p>
-  		<div class="col-lg-12 col-md-12 col-sm-12 details-page">
-  			<div class='feedback-line'>
-  			<p>Has CCSC staff improved your experience with SaaS onboarding process?</p>
-  			<ul>
-  				<li><a><span class="">5</span><label>Very Satisfied</label></a></li>
-  				<li><a><span class="">4</span><label>Somewhat Satisfied</label></a></li>
-  				<li><a><span class="">3</span><label>Neither Satisfied nor dissatisfied</label></a></li>
-  				<li><a><span class="">2</span><label>Somewhat Dissatisfied</label></a></li>
-  				<li><a><span class="">1</span><label>Very Dissatisfied</label></a></li>
-  			</ul>
-  			</div>
-  			<div class='feedback-line'>
-  			<p>Are you satisfied with how your request was handled?</p>
-  			<ul>
-  				<li><a><span class="">5</span><label>Very Satisfied</label></a></li>
-  				<li><a><span class="">4</span><label>Somewhat Satisfied</label></a></li>
-  				<li><a><span class="">3</span><label>Neither Satisfied nor dissatisfied</label></a></li>
-  				<li><a><span class="">2</span><label>Somewhat Dissatisfied</label></a></li>
-  				<li><a><span class="">1</span><label>Very Dissatisfied</label></a></li>
-  			</ul>
-  			</div>
-  			<div class='feedback-line'>
-  			<p>Do feel that the CCSC staff helped you better understand the SaaS onboarding process?</p>
-  			<ul>
-  				<li><a><span class="">5</span><label>Very Satisfied</label></a></li>
-  				<li><a><span class="">4</span><label>Somewhat Satisfied</label></a></li>
-  				<li><a><span class="">3</span><label>Neither Satisfied nor dissatisfied</label></a></li>
-  				<li><a><span class="">2</span><label>Somewhat Dissatisfied</label></a></li>
-  				<li><a><span class="">1</span><label>Very Dissatisfied</label></a></li>
-  			</ul>
-  			</div>
-  			<div class='feedback-line'>
-  			<p>Do feel that the CCSC staff helped you better understand the SaaS onboarding process?</p>
-  			<ul>
-  				<li><a><span class="">5</span><label>Very Satisfied</label></a></li>
-  				<li><a><span class="">4</span><label>Somewhat Satisfied</label></a></li>
-  				<li><a><span class="">3</span><label>Neither Satisfied nor dissatisfied</label></a></li>
-  				<li><a><span class="">2</span><label>Somewhat Dissatisfied</label></a></li>
-  				<li><a><span class="">1</span><label>Very Dissatisfied</label></a></li>
-  			</ul>
-  			</div>
+  		<div class="table-responsive feedback-forms">
+  				<br />
+  		<table class="table borderless">
+  			<tr>
+  				<td><p>Has CCSC staff improved your experience with SaaS onboarding process?</p></td>
+  				<td>
+  					<ul>
+		  				<li title='Very Satisfied'><a href = ''><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat Satisfied'><a href = ''><span class="round-box">4</span></a></li>
+		  				<li title='Neither Satisfied nor dissatisfied'><a href = ''><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat Dissatisfied'><a href = ''><span class="round-box">2</span></a></li>
+		  				<li title='Very Dissatisfied'><a href = ''><span class="round-box">1</span></a></li>
+		  			</ul>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td><p>Are you satisfied with how your request was handled?</p></td>
+  				<td>
+  					<ul>
+		  				<li title='Very Satisfied'><a href = ''><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat Satisfied'><a href = ''><span class="round-box">4</span></a></li>
+		  				<li title='Neither Satisfied nor dissatisfied'><a href = ''><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat Dissatisfied'><a href = ''><span class="round-box">2</span></a></li>
+		  				<li title='Very Dissatisfied'><a href = ''><span class="round-box">1</span></a></li>
+		  			</ul>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td><p>Do feel that the CCSC staff helped you better understand the SaaS onboarding process?</p></td>
+  				<td>
+  					<ul>
+		  				<li title='Very Satisfied'><a href = ''><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat Satisfied'><a href = ''><span class="round-box">4</span></a></li>
+		  				<li title='Neither Satisfied nor dissatisfied'><a href = ''><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat Dissatisfied'><a href = ''><span class="round-box">2</span></a></li>
+		  				<li title='Very Dissatisfied'><a href = ''><span class="round-box">1</span></a></li>
+		  			</ul>
+  				</td>
+  			</tr>
+  		</table>
   		</div>
   	</div>
 	</div>
