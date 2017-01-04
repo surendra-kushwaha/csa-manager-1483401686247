@@ -107,7 +107,7 @@ body {
 }
 
 .left-menus div{
-	padding: 15px 25px;
+	padding: 18px 25px 15px;
 	font-weight : 600;
 	margin: 0;
 }
@@ -141,7 +141,7 @@ textarea {
 	font-weight: 600;
 	font-size: 24px;
 	margin-left: 15px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 }
 
 table.table thead tr th {
@@ -169,4 +169,29 @@ table.table {
     margin-right: -32px !important;
     margin-top: -23px !important;
     float: right;
+}
+
+.details-page label {
+	width: 35%;
+}
+
+.details-page p {
+	margin-bottom: 25px;
+}
+
+.details-page .colons {
+	margin-right: 25px;
+}
+
+.comments-box {
+	background-color: #f5f5f5;
+	padding: 30px 20px 5px;
+}
+
+.small-title {
+	font-weight: bold;
+}
+
+.comments-box .table, .comments-box .table tr td {
+	border: 0;
 }
