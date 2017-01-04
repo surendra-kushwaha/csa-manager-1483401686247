@@ -45,16 +45,7 @@
 	</div>
 </div>
 </div>
-    <body>
-<%String addFlag;
-if(request.getAttribute("addFlag")!=null) {
-	addFlag=(String)request.getAttribute("addFlag");
-	if(addFlag.equalsIgnoreCase("addSuccess")){
-%>
-<div>Cloud Service Aquisition request has been successfully logged</div>
-<%
-}
-}%>    
+    <body>   
 <form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
