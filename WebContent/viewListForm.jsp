@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <%
-            String err="";
+            String err=" ";
             String userName=null;
             if(request.getSession().getAttribute("userName")!=null){
             	userName =request.getSession().getAttribute("userName").toString();
@@ -90,7 +90,7 @@ if(request.getAttribute("addFlag")!=null) {
 			        <td><%=csamInfo.getBusinessDesc()%></td>
 			        <td><span><%=csamInfo.getPriority()%></span></td>
 			        <td><%=csamInfo.getCos()%></td>
-			        <td><a href="viewFormDetails.jsp">Status Details</a></td>
+			        <td><a href="viewFormDetails.jsp?cardId=<%=csamInfo.getCardId()%>">Status Details</a></td>
 			      </tr>
 			       <%}
    } %>
