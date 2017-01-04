@@ -199,6 +199,48 @@ public class CSAManagerDao {
 		return requestList;
 	}
 	
+	public CSAMInfo getCardDetails(String cardId) {
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		CSAMInfo csamInfo=new CSAMInfo();
+		//List<CSAMInfo> requestList=new ArrayList<CSAMInfo>();
+		try {
+			if ((connection == null) || connection.isClosed() ) {
+				//con.DriverManager.getConnection(...);
+				connection =  DataBase.getInstance().getConnection();
+		    }
+			ps = connection
+					.prepareStatement("select * from \"CSAR\" where \"CARD_ID\"=?");
+			ps.setString(1, cardId);
+			//ps.setString(2, password);
+			rs = ps.executeQuery();
+			while (rs.next()){
+				
+				csamInfo.setId(rs.getString("ID"));
+				csamInfo.setRequesterId(rs.getString("REQUESTOR_ID"));
+				csamInfo.setCloudService(rs.getString("CLOUD_SERVICE"));
+				csamInfo.setPriority(rs.getString("PRIORITY"));
+				csamInfo.setBusinessDesc(rs.getString("BUSSINESS_DESC"));
+				csamInfo.setCos(rs.getString("CoS"));
+				csamInfo.setCloudServiceUrl(rs.getString("CLOUD_SERVICE_URL"));
+				
+				csamInfo.setCardTitle(rs.getString("CARD_TITLE"));
+				csamInfo.setCardId(rs.getString("CARD_ID"));
+				csamInfo.setCreatedDate(rs.getString("CREATED_DATE"));
+				csamInfo.setLob(rs.getString("LOB"));
+				System.out.println("skillInfo##"+csamInfo.toString());
+				//requestList.add(csamInfo);
+				
+			} 
+			//System.out.println("skillInfo##"+skillInfo);
+		} catch (Exception ex) {
+			System.out.println("Error in check() -->" + ex.getMessage());
+		}finally{
+			close(rs,ps,connection);
+		}
+		return csamInfo;
+	}
+	
 	public void close(ResultSet rs, PreparedStatement pstmt, Connection conn){
 		if (rs!=null){
 			try{
