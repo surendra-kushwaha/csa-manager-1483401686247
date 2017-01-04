@@ -87,6 +87,11 @@ private CSAManagerDao dao;
          CSARService http = new CSARService();
          final String VIEW_STATUS = "CSARRequest?req=view";
  		String searchRequest = request.getParameter("req");
+ 		HttpSession session = request.getSession();
+    	//if(requestorId==null){
+    		String userName=(String)session.getAttribute("userName");
+    		System.out.println("userName retrieved::"+userName);
+    	//}
  		//System.out.println("search request is------->"+searchRequest);
  		if(searchRequest.equals("create")){
  			/*Utility.CARD_TITLE = request.getParameter("title");
@@ -101,9 +106,8 @@ private CSAManagerDao dao;
         	String businessDesc=request.getParameter("businessDesc");
         	String cos=request.getParameter("cos");
         	String requestorId=request.getParameter("userId");
-        	HttpSession session = request.getSession();
         	if(requestorId==null){
-        		requestorId=(String)session.getAttribute("userName");
+        		requestorId=userName;
         	}
         	System.out.println("userId recieved in ontroller  "+requestorId);
         	CSAMInfo csamInfo=new CSAMInfo();
@@ -170,7 +174,8 @@ private CSAManagerDao dao;
             view.forward(request, response);
  			
  		}else if(searchRequest.equals("view")){
- 			Utility.SEARCH_TEXT =  request.getParameter("userId");///////////////New line added by Bibek
+ 			//Utility.SEARCH_TEXT =  request.getParameter("userId");///////////////New line added by Bibek
+ 			Utility.SEARCH_TEXT =  userName;
  			responseBoard = http.getCardsByBoard();///////////////New line added by Bibek
  			System.out.println("List of Request Status::"+responseBoard);
  			try{
@@ -195,13 +200,15 @@ private CSAManagerDao dao;
  	        	String lastUpdatedDate=commentsJson2.getString("LastActivity");  
  	        	System.out.println("lastUpdatedDate  "+lastUpdatedDate);
  	        	String assignedTo=commentsJson2.getString("AssignedUserName");
+ 	        	//String cardId=commentsJson2.getString("Id");
  	        	CSAMInfo csamInfo=new CSAMInfo();
- 	        	csamInfo=dao.getCardDetails(request.getParameter("cardid"));
+ 	        	csamInfo=dao.getCardDetails(cardId);
  	        	csamInfo.setAssignedTo(assignedTo);
  	        	csamInfo.setCardStatus(status);
  	        	csamInfo.setLastUpdatedDate(lastUpdatedDate);
  	        	csamInfo.setPriority(priority);
  	        	csamInfo.setBusinessDesc(description);
+ 	        	csamInfo.setCardId(cardId);
  	        	csamInfo.setCos(cos);
  	        	cardList.add(csamInfo);
  				
