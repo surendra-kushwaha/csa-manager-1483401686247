@@ -1,5 +1,5 @@
 $(document).load(function () {
-	
+	/*
 	alert('');
 	$('.priority').each(function () {
 		if($(this).text()=='Medium'){
@@ -11,5 +11,5 @@ $(document).load(function () {
 		} else{
 		$(this).addClass('normal');
 		};
-	});
+	});*/
 });

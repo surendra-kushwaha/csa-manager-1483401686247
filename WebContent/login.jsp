@@ -33,7 +33,8 @@
 
 
    				<div class="login-container">
-<%
+<form method="POST" action="LoginController" name="loginForm" class="form-horizontal login-box" style="margin-top: 0; padding: 25px 10% 0 10%;">
+  <%
 String inValidUser=null;
 if(request.getAttribute("loginMassage")!=null){
 	inValidUser = (String)request.getAttribute("loginMassage");
@@ -53,15 +54,14 @@ if(session!=null){
 	session.invalidate();
 }
  %>
-<form method="POST" action="LoginController" name="loginForm" class="form-horizontal login-box" style="margin-top: 0; padding: 25px 10% 0 10%;">
   <p class="login-head-p">LOGIN</p>
   <p class="ln-brk">&nbsp;</p>
   <div class="form-group">
-  	<label for="inputEmail3">User Name</label>
+  	<label for="inputEmail3"><span class="astri">*</span>User Name</label>
     <input type="text" class="form-control" id="username" name="userName" placeholder="User Name">
   </div>
   <div class="form-group">
-  	<label for="inputPassword3">Password</label>
+  	<label for="inputPassword3"><span class="astri">*</span>Password</label>
     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
   </div>
   <button type="submit" class="btn btns">Login</button>
