@@ -221,3 +221,11 @@ table.table {
 	width: 178px;
     display: inline-flex;
 }
+
+.feedback-line ul {
+	padding-left: 0;
+}
+
+.feedback-line ul li {
+	display: inline-block;
+}
