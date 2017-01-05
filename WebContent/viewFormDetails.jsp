@@ -70,11 +70,6 @@
   			<p><label>Assigned To</label><span class="colons">:</span><span><%=csamInfo.getAssignedTo()%></span></p>
   			<p><label>Comments</label></p>
   			<div class="comments-box" style="margin-bottom: 40px;">
-  			<%
-  				if(request.getAttribute("CommentsList")!=null){
-  				List<Comments> commentList=(List<Comments>)request.getAttribute("CommentsList"); 
-  				if(commentList.size()>0){
-  				%>
   			<table class="table">
   				
   				<tr>
@@ -83,7 +78,7 @@
   					<td class="col-lg-5 col-md-5 col-sm-5"><p class='small-title'>Comments</p></td>
   				</tr>
   				<%
-  				//List<Comments> commentList=(List<Comments>)request.getAttribute("CommentsList"); 
+  				List<Comments> commentList=(List<Comments>)request.getAttribute("CommentsList"); 
 	 			   Iterator itr=commentList.iterator();
 	 			   while(itr.hasNext()){
 	 				  Comments comment=(Comments)itr.next();
@@ -96,8 +91,8 @@
   				
   			</table>
   			<%}
-  				}
-  				}%>
+  				
+  				%>
   			</div>
   		</div>
   		<%
