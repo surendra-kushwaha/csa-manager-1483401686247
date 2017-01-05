@@ -66,7 +66,7 @@
   				<br />
   		<table class="table borderless">
   			<tr>
-  				<td><p>Has CCSC staff improved your experience with SaaS onboarding process?</p>
+  				<td><p style="padding-top: 0">Has CCSC staff improved your experience with SaaS onboarding process?</p>
   					<ul>
 		  				<li title='Very satisfied'><a><span class="round-box">5</span></a></li>
 		  				<li title='Somewhat satisfied'><a><span class="round-box">4</span></a></li>
@@ -113,13 +113,13 @@
   		</table>
   		</div>
   		<div class="success-msg1"></div>
-  		<p class="title-head" style="margin-left: 0"><label>&nbsp;</label><span class='back-span'><a href="javascript: history.go(-1)"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns">Submit</a></span></p>
+  		<p class="title-head" style="margin-left: 0; margin-bottom: 40px;"><label>&nbsp;</label><span class='back-span'><a href="javascript: history.go(-1)"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns">Submit</a></span></p>
   	</div>
 	</div>
 	</div>
 	<style>
 		.left-menus {
-			min-height: 650px;
+			min-height: 700px;
 		}
 	</style>
      <script src="lib/js/jquery-1.11.3.min.js"></script>

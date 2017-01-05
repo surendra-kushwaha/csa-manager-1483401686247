@@ -57,7 +57,7 @@
 	<div class="col-lg-10 col-md-10 col-sm-9">
 		<div class="row pad-adju">
 		<p class="title-head" style="margin-left: 0">View List of Status</p>
-  		<div class="table-responsive">
+  		<div class="table-responsive" style="margin-bottom: 45px;">
   			<table class="table">
 			    <thead>
 			      <tr>
@@ -98,52 +98,6 @@
   	</div>
 	</div>
 	</div>
-  <!-- 
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-3 control-label">Cloud Service</label>
-    <div class="col-sm-9">
-       <textarea class="form-control" id="businessDesc" name="businessDesc"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-3 control-label">Line of Business</label>
-    <div class="col-sm-9">
-      <textarea class="form-control" id="cos" name="cos"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-3 control-label">Priority</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="priority" name="priority">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-3 control-label">URL of the Cloud Service</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="cloudServiceUrl" name="cloudServiceUrl">
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-3 control-label">Business Description</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="businessDesc" name="businessDesc">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-3 control-label">Class of Service</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="cos" name="cos">
-    </div>
-  </div>
-  
-  
-  <div class="form-group">
-  <div class="col-sm-offset-3" style="padding-left:18px">
-  	 <input type="button" value="reset" class="btn btns resetbtn" style="margin-right: 10px;"/>
-  	 <button type="submit" class="btn btns">Login</button>
-  	 </div>
-  </div>-->
 </form>
 <footer style="background: #b8b8b8">
          	<div class="footer" style="color: #4b4b4b">

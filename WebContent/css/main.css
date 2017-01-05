@@ -252,6 +252,11 @@ footer {
     color: white;
 }
 
+.borderless p {
+    font-weight: bold;
+    padding-top: 12px;
+}
+
 .footer {
     height: 30px;
     display: block;
