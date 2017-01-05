@@ -49,6 +49,10 @@ span.priority {
 	min-height: 650px;
 }
 
+.login-container .form-horizontal .form-group {
+	margin: 0 0 25px;
+}
+
 .form-horizontal .form-group {
 	margin: 0 0 15px;
 }
