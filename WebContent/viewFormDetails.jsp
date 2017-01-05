@@ -61,40 +61,14 @@
     %>
   		<div class="col-lg-12 col-md-12 col-sm-12 details-page">  			
   			
-  			<table class=""table>
-  			<tr>
-  				<td width="30%"><label>Cloud Service</label></td>
-  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getCloudService()%></span</td>
-  			</tr>
-  			<tr>
-  				<td width="30%"><label>Description</label></td>
-  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getBusinessDesc()%></span</td>
-  			</tr>
-  			<tr>
-  				<td width="30%"><label>Line of Business</label></td>
-  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getLob()%></span</td>
-  			</tr>
-  			<tr>
-  				<td width="30%"><label>Priority</label></td>
-  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getPriority()%></span</td>
-  			</tr>
-  			<tr>
-  				<td width="30%"><label>Class of Service</label></td>
-  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getCos()%></span</td>
-  			</tr>
-  			<tr>
-  				<td width="30%"><label>Status</label></td>
-  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getCardStatus()%></span</td>
-  			</tr>
-  			<tr>
-  				<td width="30%"><label>Last Updated Date</label></td>
-  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getLastUpdatedDate()%></span</td>
-  			</tr>
-  			<tr>
-  				<td width="30%"><label>Assigned To</label></td>
-  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getAssignedTo()%></span</td>
-  			</tr>
-  		</table>
+  			<p><label>Cloud Service</label><span class="colons">:</span><span><%=csamInfo.getCloudService()%></span></p>
+  			<p><label>Line of Business</label><span class="colons">:</span><span><%=csamInfo.getLob()%></span></p>
+  			<p><label>Description</label><span class="colons">:</span><span style="width:250px;"><%=csamInfo.getBusinessDesc()%></span></p>
+  			<p><label>Priority</label><span class="colons">:</span><span class='priority'><%=csamInfo.getPriority()%></span></p>
+  			<p><label>Class of Service</label><span class="colons">:</span><span><%=csamInfo.getCos()%></span></p>
+  			<p><label>Status</label><span class="colons">:</span><span><%=csamInfo.getCardStatus()%></span></p>
+  			<p><label>Last Updated Date</label><span class="colons">:</span><span><%=csamInfo.getLastUpdatedDate()%></span></p>
+  			<p><label>Assigned To</label><span class="colons">:</span><span><%=csamInfo.getAssignedTo()%></span></p>
   			<p><label>Comments</label></p>
   			<div class="comments-box" style="margin-bottom: 40px;">
   			<table class="table">
