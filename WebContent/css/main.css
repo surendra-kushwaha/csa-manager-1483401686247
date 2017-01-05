@@ -371,6 +371,9 @@ footer {
     display: block;
     border-radius: 4px;
     font-weight: bold;
+    margin: 0 auto;
+    width: 50%;
+    margin-bottom: 30px;
 }
 
 .lw {

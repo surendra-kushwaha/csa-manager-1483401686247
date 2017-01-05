@@ -22,3 +22,9 @@ function changes() {
 		$(this).addClass(cls);
 	});
 }
+
+function validate () {
+	setTimeout(function() {
+		$(".success-msg").fadeOut();
+	}, 5000);
+}
