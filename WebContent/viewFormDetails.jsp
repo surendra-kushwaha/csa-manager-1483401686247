@@ -60,24 +60,57 @@
     
     %>
   		<div class="col-lg-12 col-md-12 col-sm-12 details-page">
-  			<p><label>Cloud Service</label><span class="colons">:</span><span><%=csamInfo.getCloudService()%></span></p>
-  			<p><label>Line of Business</label><span class="colons">:</span><span><%=csamInfo.getLob()%></span></p>
-  			<p><label>Description</label><span class="colons">:</span><span style="width:150px;"><%=csamInfo.getBusinessDesc()%></span></p>
-  			<p><label>Priority</label><span class="colons">:</span><span class='priority'><%=csamInfo.getPriority()%></span></p>
-  			<p><label>Class of Service</label><span class="colons">:</span><span><%=csamInfo.getCos()%></span></p>
-  			<p><label>Status</label><span class="colons">:</span><span><%=csamInfo.getCardStatus()%></span></p>
-  			<p><label>Last Updated Date</label><span class="colons">:</span><span><%=csamInfo.getLastUpdatedDate()%></span></p>
-  			<p><label>Assigned To</label><span class="colons">:</span><span><%=csamInfo.getAssignedTo()%></span></p>
+  			<table class=""table>
+  			<tr>
+  				<td><label>Cloud Service</label></td>
+  				<td><span class="colons">:</span><span><%=csamInfo.getCloudService()%></span</td>
+  			</tr>
+  			<tr>
+  				<td><label>Description</label></td>
+  				<td><span class="colons">:</span><span><%=csamInfo.getLob()%></span</td>
+  			</tr>
+  			<tr>
+  				<td><label>Line of Business</label></td>
+  				<td><span class="colons">:</span><span><%=csamInfo.getBusinessDesc()%></span</td>
+  			</tr>
+  			<tr>
+  				<td><label>Priority</label></td>
+  				<td><span class="colons">:</span><span><%=csamInfo.getPriority()%></span</td>
+  			</tr>
+  			<tr>
+  				<td><label>Class of Service</label></td>
+  				<td><span class="colons">:</span><span><%=csamInfo.getCos()%></span</td>
+  			</tr>
+  			<tr>
+  				<td><label>Status</label></td>
+  				<td><span class="colons">:</span><span><%=csamInfo.getCardStatus()%></span</td>
+  			</tr>
+  			<tr>
+  				<td><label>Last Updated Date</label></td>
+  				<td><span class="colons">:</span><span><%=csamInfo.getLastUpdatedDate()%></span</td>
+  			</tr>
+  			<tr>
+  				<td><label>Assigned To</label></td>
+  				<td><span class="colons">:</span><span><%=csamInfo.getAssignedTo()%></span</td>
+  			</tr>
+  			</table>
+  			
   			<p><label>Comments</label></p>
   			<div class="comments-box" style="margin-bottom: 40px;">
+  			<%
+  				if(request.getAttribute("CommentsList")!=null){
+  				List<Comments> commentList=(List<Comments>)request.getAttribute("CommentsList"); 
+  				if(commentList.size()>0){
+  				%>
   			<table class="table">
+  				
   				<tr>
   					<td class="col-lg-3 col-md-3 col-sm-3"><p class='small-title'>Post Date</p></td>
   					<td class="col-lg-4 col-md-4 col-sm-4"><p class='small-title'>Posted By</p></td>
   					<td class="col-lg-5 col-md-5 col-sm-5"><p class='small-title'>Comments</p></td>
   				</tr>
   				<%
-  				List<Comments> commentList=(List<Comments>)request.getAttribute("CommentsList"); 
+  				//List<Comments> commentList=(List<Comments>)request.getAttribute("CommentsList"); 
 	 			   Iterator itr=commentList.iterator();
 	 			   while(itr.hasNext()){
 	 				  Comments comment=(Comments)itr.next();
@@ -87,8 +120,11 @@
   					<td class="col-lg-4 col-md-4 col-sm-4"><p><%=comment.getPostedBy()%></p></td>
   					<td class="col-lg-5 col-md-5 col-sm-5"><%=comment.getComment()%></td>
   				</tr>
-  				<%}%>
+  				
   			</table>
+  			<%}
+  				}
+  				}%>
   			</div>
   		</div>
   		<%
