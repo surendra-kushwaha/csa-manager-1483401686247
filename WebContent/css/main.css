@@ -187,7 +187,7 @@ table.table {
 
 .back-span {
 	display: inline-block;
-    width: 15%;
+    width: 25%;
     text-align: right;
     margin-right: 4%;
     text-transform: Uppercase;
@@ -207,7 +207,7 @@ table.table {
 
 .feedback-span {
 	margin-top: -10px;
-	width: 30%;
+	width: 20%;
     display: inline-flex;
 }
 
@@ -337,7 +337,7 @@ footer {
 	}
 	
 	.back-span {
-		width: 15%;
+		width: 25%;
 	}
 	
 	.left-menus div.arrow-right {
