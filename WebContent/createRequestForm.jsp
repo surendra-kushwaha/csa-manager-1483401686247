@@ -50,7 +50,7 @@
 <form method="POST" action="CSARRequest" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
-  		<div class=""><a href="CSARRequest?req=view"><img src="images/icon_View_Normal.png">View Status</a></div>
+  		<div class=""><a href="CSARRequest?req=view&userId=<%=userName%>"><img src="images/icon_View_Normal.png">View Status</a></div>
   		<div class="active"><img src="images/icon_Create_Active.png">Create New Request
   			<div class="arrow-right"></div>
   		</div>

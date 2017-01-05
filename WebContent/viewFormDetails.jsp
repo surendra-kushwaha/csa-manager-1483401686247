@@ -53,7 +53,7 @@
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9">
 		<div class="row pad-adju">
-		<p class="title-head "><label>Status Details </label><span class='back-span'><a href="viewListForm.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href='feedback.jsp'>Feedback</a></span></p>
+		<p class="title-head "><label>Status Details </label><span class='back-span'><a href="CSARRequest?req=view"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href='feedback.jsp'>Feedback</a></span></p>
   		<%
     if(request.getAttribute("cardDeatils")!=null){
     	CSAMInfo csamInfo=(CSAMInfo)request.getAttribute("cardDeatils");

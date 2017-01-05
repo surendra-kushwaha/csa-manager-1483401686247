@@ -176,6 +176,9 @@ private CSAManagerDao dao;
  			
  		}else if(searchRequest.equals("view")){
  			//Utility.SEARCH_TEXT =  request.getParameter("userId");///////////////New line added by Bibek
+ 			if(userName==null){
+ 				userName=request.getParameter("userId");
+ 			}
  			Utility.SEARCH_TEXT =  userName;
  			responseBoard = http.getCardsByBoard();///////////////New line added by Bibek
  			System.out.println("List of Request Status::"+responseBoard);
