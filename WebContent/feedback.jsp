@@ -50,7 +50,18 @@
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9">
 		<div class="row pad-adju">
-		<p class="title-head "><label>Customer Satisfaction Survey </label><span class='back-span'><a href="viewFormDetails.jsp"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href=''>Submit</a></span></p>
+		<p class="title-head" style="margin-left: 0"><label>Customer Satisfaction Survey </label></p>
+  		<p class='rate-title'><span class="astri">*</span>Rating Legends</p>
+  		<div class='feedback-legends'>
+  			<ul>
+  				<li><span class='rat-leg-num'>5</span><span class='rat-leg-lbl'>Very Satisfied</span></li>
+  				<li><span class='rat-leg-num'>4</span><span class='rat-leg-lbl'>Somewhat Satisfied</span></li>
+  				<li><span class='rat-leg-num'>3</span><span class='rat-leg-lbl'>Neither satisfied nor dissatisfied</span></li>
+  				<li><span class='rat-leg-num'>2</span><span class='rat-leg-lbl'>Somewhat dissatisfied</span></li>
+  				<li><span class='rat-leg-num'>1</span><span class='rat-leg-lbl'>Very dissatisfied</span></li>
+  			</ul>
+  		</div>
+  			
   		<div class="table-responsive feedback-forms">
   				<br />
   		<table class="table borderless">
@@ -105,12 +116,14 @@
   			
   		</table>
   		</div>
+  		<br/>
+  		<p class="title-head" style="margin-left: 0"><label>&nbsp;</label><span class='back-span'><a href="javascript: history.go(-1)"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href=''>Submit</a></span></p>
   	</div>
 	</div>
 	</div>
 	<style>
 		.left-menus {
-			min-height: 1000px;
+			min-height: 650px;
 		}
 	</style>
      <script src="lib/js/jquery-1.11.3.min.js"></script>

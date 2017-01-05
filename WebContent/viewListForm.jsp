@@ -45,7 +45,7 @@
 	</div>
 </div>
 </div>
-    <body>   
+    <body onload="changes();">   
 <form method="POST" action="createRequestController" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
@@ -97,7 +97,7 @@
   		</div>
   	</div>
 	</div>
-	<div>
+	</div>
   <!-- 
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-3 control-label">Cloud Service</label>

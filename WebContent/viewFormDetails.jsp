@@ -44,7 +44,7 @@
 	</div>
 </div>
 </div>
-    <body>
+    <body onload="changes();">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
   		<div><a href="CSARRequest?req=view"><img src="images/icon_View_Normal.png">View Status</a>
