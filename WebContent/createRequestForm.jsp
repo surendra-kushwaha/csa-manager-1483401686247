@@ -47,7 +47,7 @@
 </div>
     <body>
     
-<form method="POST" action="CSARRequest" name="requestForm" class="form-horizontal">
+<form method="POST" action="CSARRequest" name="requestForm" class="form-horizontal" onsubmit="validate()">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
   		<div class=""><a href="CSARRequest?req=view&userId=<%=userName%>"><img src="images/icon_View_Normal.png">View Status</a></div>
@@ -63,7 +63,7 @@ if(request.getAttribute("addFlag")!=null) {
 	addFlag=(String)request.getAttribute("addFlag");
 	if(addFlag.equalsIgnoreCase("addSuccess")){
 %>
-<div class="success-msg">Cloud Service Aquisition request has been successfully logged</div>
+<div class="success-msg">Cloud Service Acquisition request has been successfully logged</div>
 <%
 }
 }%> 
