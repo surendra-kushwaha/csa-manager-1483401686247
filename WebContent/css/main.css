@@ -141,7 +141,7 @@ textarea {
 	font-weight: 600;
 	font-size: 24px;
 	margin-left: 15px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 table.table thead tr th {
@@ -231,6 +231,7 @@ table.table {
 
 table.table.borderless a {
 	text-decoration: none;
+	cursor: pointer;
 }
 
 footer {
@@ -326,6 +327,7 @@ footer {
 .rate-title {
 	font-size: 16px;
 	font-weight: bold;
+	margin-bottom: 0;
 }
 
 
@@ -363,7 +365,8 @@ footer {
 	
 }
 
-.success-msg{
+
+.success-msg, .success-msg1{
 	text-align: center;
     padding: 6px;
     border: solid 1px #abddee !important;
@@ -376,15 +379,15 @@ footer {
     margin-bottom: 30px;
 }
 
-.lw {
-	color: #3bab75;
-}
+.success-msg1{ display: none; }
 
-.hgh {
-	color: #ff8400;
-}
+.errormsg1 { color: red; }
 
-.crt {
-	color: #ff0000;
-}
+.actives { background: #00aeef; }
+
+.lw { color: #3bab75; }
+
+.hgh { color: #ff8400; }
+
+.crt { color: #ff0000; }
 

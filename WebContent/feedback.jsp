@@ -41,7 +41,7 @@
 	</div>
 </div>
 </div>
-    <body>
+    <body onload="feedbacks()">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
   		<div><a href="CSARRequest?req=view"><img src="images/icon_View_Normal.png">View Status</a>
@@ -69,11 +69,11 @@
   				<td><p>Has CCSC staff improved your experience with SaaS onboarding process?</p></td>
   				<td>
   					<ul>
-		  				<li title='Very Satisfied'><a href = ''><span class="round-box">5</span></a></li>
-		  				<li title='Somewhat Satisfied'><a href = ''><span class="round-box">4</span></a></li>
-		  				<li title='Neither Satisfied nor dissatisfied'><a href = ''><span class="round-box">3</span></a></li>
-		  				<li title='Somewhat Dissatisfied'><a href = ''><span class="round-box">2</span></a></li>
-		  				<li title='Very Dissatisfied'><a href = ''><span class="round-box">1</span></a></li>
+		  				<li title='Very Satisfied'><a><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat Satisfied'><a><span class="round-box">4</span></a></li>
+		  				<li title='Neither Satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat Dissatisfied'><a><span class="round-box">2</span></a></li>
+		  				<li title='Very Dissatisfied'><a><span class="round-box">1</span></a></li>
 		  			</ul>
   				</td>
   			</tr>
@@ -81,11 +81,11 @@
   				<td><p>Are you satisfied with how your request was handled?</p></td>
   				<td>
   					<ul>
-		  				<li title='Very Satisfied'><a href = ''><span class="round-box">5</span></a></li>
-		  				<li title='Somewhat Satisfied'><a href = ''><span class="round-box">4</span></a></li>
-		  				<li title='Neither Satisfied nor dissatisfied'><a href = ''><span class="round-box">3</span></a></li>
-		  				<li title='Somewhat Dissatisfied'><a href = ''><span class="round-box">2</span></a></li>
-		  				<li title='Very Dissatisfied'><a href = ''><span class="round-box">1</span></a></li>
+		  				<li title='Very Satisfied'><a><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat Satisfied'><a><span class="round-box">4</span></a></li>
+		  				<li title='Neither Satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat Dissatisfied'><a><span class="round-box">2</span></a></li>
+		  				<li title='Very Dissatisfied'><a><span class="round-box">1</span></a></li>
 		  			</ul>
   				</td>
   			</tr>
@@ -93,11 +93,11 @@
   				<td><p>Do feel that the CCSC staff helped you better understand the SaaS onboarding process?</p></td>
   				<td>
   					<ul>
-		  				<li title='Very Satisfied'><a href = ''><span class="round-box">5</span></a></li>
-		  				<li title='Somewhat Satisfied'><a href = ''><span class="round-box">4</span></a></li>
-		  				<li title='Neither Satisfied nor dissatisfied'><a href = ''><span class="round-box">3</span></a></li>
-		  				<li title='Somewhat Dissatisfied'><a href = ''><span class="round-box">2</span></a></li>
-		  				<li title='Very Dissatisfied'><a href = ''><span class="round-box">1</span></a></li>
+		  				<li title='Very Satisfied'><a><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat Satisfied'><a><span class="round-box">4</span></a></li>
+		  				<li title='Neither Satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat Dissatisfied'><a><span class="round-box">2</span></a></li>
+		  				<li title='Very Dissatisfied'><a><span class="round-box">1</span></a></li>
 		  			</ul>
   				</td>
   			</tr>
@@ -105,19 +105,20 @@
   				<td><p>Have you found the CCSC team to be friendly and good communicators?</p></td>
   				<td>
   					<ul>
-		  				<li title='Very Satisfied'><a href = ''><span class="round-box">5</span></a></li>
-		  				<li title='Somewhat Satisfied'><a href = ''><span class="round-box">4</span></a></li>
-		  				<li title='Neither Satisfied nor dissatisfied'><a href = ''><span class="round-box">3</span></a></li>
-		  				<li title='Somewhat Dissatisfied'><a href = ''><span class="round-box">2</span></a></li>
-		  				<li title='Very Dissatisfied'><a href = ''><span class="round-box">1</span></a></li>
+		  				<li title='Very Satisfied'><a><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat Satisfied'><a><span class="round-box">4</span></a></li>
+		  				<li title='Neither Satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat Dissatisfied'><a><span class="round-box">2</span></a></li>
+		  				<li title='Very Dissatisfied'><a><span class="round-box">1</span></a></li>
 		  			</ul>
   				</td>
   			</tr>
   			
   		</table>
   		</div>
+  		<div class="success-msg1"></div>
   		<br/>
-  		<p class="title-head" style="margin-left: 0"><label>&nbsp;</label><span class='back-span'><a href="javascript: history.go(-1)"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href=''>Submit</a></span></p>
+  		<p class="title-head" style="margin-left: 0"><label>&nbsp;</label><span class='back-span'><a href="javascript: history.go(-1)"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns">Submit</a></span></p>
   	</div>
 	</div>
 	</div>

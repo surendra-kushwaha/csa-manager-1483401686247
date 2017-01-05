@@ -1,6 +1,6 @@
 /*$(document).load(function () {
 	$(".success-msg").fadeIn();
-    setTimeout($(".success-msg").fadeOut(), 15000);
+    setTimeout($(".success-msg").fadeOut(), 13000);
 });*/
 
 function changes() {
@@ -26,5 +26,34 @@ function changes() {
 function validate () {
 	setTimeout(function() {
 		$(".success-msg").fadeOut();
-	}, 5000);
+	}, 3000);
+}
+
+function feedbacks () {
+	$('.borderless ul li a').on('click', function () {
+		 $theSpan = $(this).children('span');
+		 $theSiblings = $(this).parent('li').siblings();
+		 if($theSpan.hasClass('actives')){
+			$theSpan.removeClass('actives');
+		 }else{
+			$theSpan.addClass('actives');
+		    $theSiblings.each(function () {
+		      $(this).children('a').children('span').removeClass('actives');
+		   });
+		 }
+	});
+	
+	$('.feedback-span a').on('click', function () {
+		if($('.actives').length==4){
+			$(".success-msg1").html('Thanks for your Feedback!!!').fadeIn();
+			setTimeout(function() {
+				$(".success-msg1").fadeOut();
+			}, 3000);
+		}else{
+			$(".success-msg1").html('Please provide feedbacks for all queries.').addClass('errormsg1').fadeIn();
+			setTimeout(function() {
+				$(".success-msg1").removeClass('errormsg1').fadeOut();
+			}, 3000);
+		};
+	});
 }
