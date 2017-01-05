@@ -63,7 +63,7 @@
   			<p><label>Cloud Service</label><span class="colons">:</span><span><%=csamInfo.getCloudService()%></span></p>
   			<p><label>Line of Business</label><span class="colons">:</span><span><%=csamInfo.getLob()%></span></p>
   			<p><label>Description</label><span class="colons">:</span><span style="width:150px;"><%=csamInfo.getBusinessDesc()%></span></p>
-  			<p><label>Priority</label><span class="colons">:</span><span><%=csamInfo.getPriority()%></span></p>
+  			<p><label>Priority</label><span class="colons">:</span><span class='priority'><%=csamInfo.getPriority()%></span></p>
   			<p><label>Class of Service</label><span class="colons">:</span><span><%=csamInfo.getCos()%></span></p>
   			<p><label>Status</label><span class="colons">:</span><span><%=csamInfo.getCardStatus()%></span></p>
   			<p><label>Last Updated Date</label><span class="colons">:</span><span><%=csamInfo.getLastUpdatedDate()%></span></p>
