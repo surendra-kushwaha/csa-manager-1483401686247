@@ -45,7 +45,7 @@ function feedbacks () {
 	
 	$('.feedback-span a').on('click', function () {
 		if($('.actives').length==4){
-			$(".success-msg1").html('Thanks for your Feedback!!!').fadeIn();
+			$(".success-msg1").html('CSAT survey has been successfully completed.').fadeIn();
 			setTimeout(function() {
 				$(".success-msg1").fadeOut();
 			}, 3000);
