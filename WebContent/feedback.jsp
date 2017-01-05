@@ -49,7 +49,7 @@
   		<div><a href="createRequestForm.jsp"><img src="images/icon_Create_normal.png">Create New Request</a></div>
 	</div>
 	<div class="col-lg-10 col-md-10 col-sm-9">
-		<div class="row pad-adju">
+		<div class="row pad-adju"> 
 		<p class="title-head "><label>Customer Satisfaction Survey </label><span class='back-span'><a href="CSARRequest?req=view"> < Back</a></span><span class='feedback-span'><a class="right-btn btn btns" href=''>Submit</a></span></p>
   		<div class="table-responsive feedback-forms">
   				<br />
