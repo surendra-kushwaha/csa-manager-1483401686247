@@ -4,7 +4,6 @@
 });*/
 
 function changes() {
-	alert('');
 	$('.priority').each(function() {
 		var cls = 'nrm';
 		switch ($(this).text()) {
