@@ -257,7 +257,17 @@ private CSAManagerDao dao;
         	String status=json2.getString("LaneTitle");
         	String lastUpdatedDate=json2.getString("LastActivity");  
         	System.out.println("lastUpdatedDate  "+lastUpdatedDate);
-        	String assignedTo=json2.getString("AssignedUserName");
+        	String assignedTo="";
+        	JSONArray AssinedUserjson = new JSONArray(json2.getString("AssignedUsers"));
+        	System.out.println("AssinedUserjson..  "+AssinedUserjson);
+        	for(int i=0; i<AssinedUserjson.length();i++){
+        		JSONObject commentsJson2 = (JSONObject) AssinedUserjson.get(i);
+        		assignedTo+=commentsJson2.getString("AssignedUserName")+";";
+        	}
+        	System.out.println("AssignedUsers::"+assignedTo);
+        	//String assignedTo=json2.getString("AssignedUserName");
+        	
+        	
         	CSAMInfo csamInfo=new CSAMInfo();
         	csamInfo=dao.getCardDetails(request.getParameter("cardid"));
         	csamInfo.setAssignedTo(assignedTo);
@@ -279,7 +289,7 @@ private CSAManagerDao dao;
  			List<Comments> commentList=new ArrayList<Comments>();
  			JSONArray json22 = (JSONArray) commentsJson1.get(0);
  			System.out.println("Hi3#A#"+json22);
- 			for(int i=0; i<json22.length();i++){
+ 			for(int i=0; i<json22.length() && i<3;i++){
  				System.out.println("hi4");
  				JSONObject commentsJson2 = (JSONObject) json22.get(i);
  				System.out.println("hi5");
