@@ -63,36 +63,36 @@
   			
   			<table class=""table>
   			<tr>
-  				<td width="50%"><label>Cloud Service</label></td>
-  				<td width="50%"><span class="colons">:</span><span><%=csamInfo.getCloudService()%></span</td>
+  				<td width="30%"><label>Cloud Service</label></td>
+  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getCloudService()%></span</td>
   			</tr>
   			<tr>
-  				<td width="50%"><label>Description</label></td>
-  				<td width="50%"><span class="colons">:</span><span><%=csamInfo.getBusinessDesc()%></span</td>
+  				<td width="30%"><label>Description</label></td>
+  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getBusinessDesc()%></span</td>
   			</tr>
   			<tr>
-  				<td width="50%"><label>Line of Business</label></td>
-  				<td width="50%"><span class="colons">:</span><span><%=csamInfo.getLob()%></span</td>
+  				<td width="30%"><label>Line of Business</label></td>
+  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getLob()%></span</td>
   			</tr>
   			<tr>
-  				<td width="50%"><label>Priority</label></td>
-  				<td width="50%"><span class="colons">:</span><span><%=csamInfo.getPriority()%></span</td>
+  				<td width="30%"><label>Priority</label></td>
+  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getPriority()%></span</td>
   			</tr>
   			<tr>
-  				<td width="50%"><label>Class of Service</label></td>
-  				<td width="50%"><span class="colons">:</span><span><%=csamInfo.getCos()%></span</td>
+  				<td width="30%"><label>Class of Service</label></td>
+  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getCos()%></span</td>
   			</tr>
   			<tr>
-  				<td width="50%"><label>Status</label></td>
-  				<td width="50%"><span class="colons">:</span><span><%=csamInfo.getCardStatus()%></span</td>
+  				<td width="30%"><label>Status</label></td>
+  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getCardStatus()%></span</td>
   			</tr>
   			<tr>
-  				<td width="50%"><label>Last Updated Date</label></td>
-  				<td width="50%"><span class="colons">:</span><span><%=csamInfo.getLastUpdatedDate()%></span</td>
+  				<td width="30%"><label>Last Updated Date</label></td>
+  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getLastUpdatedDate()%></span</td>
   			</tr>
   			<tr>
-  				<td width="50%"><label>Assigned To</label></td>
-  				<td width="50%"><span class="colons">:</span><span><%=csamInfo.getAssignedTo()%></span</td>
+  				<td width="30%"><label>Assigned To</label></td>
+  				<td width="60%"><span class="colons">:</span><span><%=csamInfo.getAssignedTo()%></span</td>
   			</tr>
   		</table>
   			<p><label>Comments</label></p>
