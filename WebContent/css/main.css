@@ -229,6 +229,10 @@ table.table {
 	padding: 10px;
 }
 
+.borderless ul {
+	text-align: center;
+}
+
 table.table.borderless a {
 	text-decoration: none;
 	cursor: pointer;

@@ -50,7 +50,7 @@ function feedbacks () {
 				$(".success-msg1").fadeOut();
 			}, 3000);
 		}else{
-			$(".success-msg1").html('Please provide feedbacks for all queries.').addClass('errormsg1').fadeIn();
+			$(".success-msg1").html('Please provide the feedback for all options').addClass('errormsg1').fadeIn();
 			setTimeout(function() {
 				$(".success-msg1").removeClass('errormsg1').fadeOut();
 			}, 3000);

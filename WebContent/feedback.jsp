@@ -54,8 +54,8 @@
   		<p class='rate-title'><span class="astri">*</span>Rating Legends</p>
   		<div class='feedback-legends'>
   			<ul>
-  				<li><span class='rat-leg-num'>5</span><span class='rat-leg-lbl'>Very Satisfied</span></li>
-  				<li><span class='rat-leg-num'>4</span><span class='rat-leg-lbl'>Somewhat Satisfied</span></li>
+  				<li><span class='rat-leg-num'>5</span><span class='rat-leg-lbl'>Very satisfied</span></li>
+  				<li><span class='rat-leg-num'>4</span><span class='rat-leg-lbl'>Somewhat satisfied</span></li>
   				<li><span class='rat-leg-num'>3</span><span class='rat-leg-lbl'>Neither satisfied nor dissatisfied</span></li>
   				<li><span class='rat-leg-num'>2</span><span class='rat-leg-lbl'>Somewhat dissatisfied</span></li>
   				<li><span class='rat-leg-num'>1</span><span class='rat-leg-lbl'>Very dissatisfied</span></li>
@@ -69,11 +69,11 @@
   				<td><p>Has CCSC staff improved your experience with SaaS onboarding process?</p></td>
   				<td>
   					<ul>
-		  				<li title='Very Satisfied'><a><span class="round-box">5</span></a></li>
-		  				<li title='Somewhat Satisfied'><a><span class="round-box">4</span></a></li>
-		  				<li title='Neither Satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
-		  				<li title='Somewhat Dissatisfied'><a><span class="round-box">2</span></a></li>
-		  				<li title='Very Dissatisfied'><a><span class="round-box">1</span></a></li>
+		  				<li title='Very satisfied'><a><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat satisfied'><a><span class="round-box">4</span></a></li>
+		  				<li title='Neither satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat dissatisfied'><a><span class="round-box">2</span></a></li>
+		  				<li title='Very dissatisfied'><a><span class="round-box">1</span></a></li>
 		  			</ul>
   				</td>
   			</tr>
@@ -81,11 +81,11 @@
   				<td><p>Are you satisfied with how your request was handled?</p></td>
   				<td>
   					<ul>
-		  				<li title='Very Satisfied'><a><span class="round-box">5</span></a></li>
-		  				<li title='Somewhat Satisfied'><a><span class="round-box">4</span></a></li>
-		  				<li title='Neither Satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
-		  				<li title='Somewhat Dissatisfied'><a><span class="round-box">2</span></a></li>
-		  				<li title='Very Dissatisfied'><a><span class="round-box">1</span></a></li>
+		  				<li title='Very satisfied'><a><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat satisfied'><a><span class="round-box">4</span></a></li>
+		  				<li title='Neither satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat dissatisfied'><a><span class="round-box">2</span></a></li>
+		  				<li title='Very dissatisfied'><a><span class="round-box">1</span></a></li>
 		  			</ul>
   				</td>
   			</tr>
@@ -93,11 +93,11 @@
   				<td><p>Do feel that the CCSC staff helped you better understand the SaaS onboarding process?</p></td>
   				<td>
   					<ul>
-		  				<li title='Very Satisfied'><a><span class="round-box">5</span></a></li>
-		  				<li title='Somewhat Satisfied'><a><span class="round-box">4</span></a></li>
-		  				<li title='Neither Satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
-		  				<li title='Somewhat Dissatisfied'><a><span class="round-box">2</span></a></li>
-		  				<li title='Very Dissatisfied'><a><span class="round-box">1</span></a></li>
+		  				<li title='Very satisfied'><a><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat satisfied'><a><span class="round-box">4</span></a></li>
+		  				<li title='Neither satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat dissatisfied'><a><span class="round-box">2</span></a></li>
+		  				<li title='Very dissatisfied'><a><span class="round-box">1</span></a></li>
 		  			</ul>
   				</td>
   			</tr>
@@ -105,11 +105,11 @@
   				<td><p>Have you found the CCSC team to be friendly and good communicators?</p></td>
   				<td>
   					<ul>
-		  				<li title='Very Satisfied'><a><span class="round-box">5</span></a></li>
-		  				<li title='Somewhat Satisfied'><a><span class="round-box">4</span></a></li>
-		  				<li title='Neither Satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
-		  				<li title='Somewhat Dissatisfied'><a><span class="round-box">2</span></a></li>
-		  				<li title='Very Dissatisfied'><a><span class="round-box">1</span></a></li>
+		  				<li title='Very satisfied'><a><span class="round-box">5</span></a></li>
+		  				<li title='Somewhat satisfied'><a><span class="round-box">4</span></a></li>
+		  				<li title='Neither satisfied nor dissatisfied'><a><span class="round-box">3</span></a></li>
+		  				<li title='Somewhat dissatisfied'><a><span class="round-box">2</span></a></li>
+		  				<li title='Very dissatisfied'><a><span class="round-box">1</span></a></li>
 		  			</ul>
   				</td>
   			</tr>
