@@ -192,7 +192,27 @@ private CSAManagerDao dao;
  			for(int i=0; i<commentsJson3.length();i++){
  				JSONObject commentsJson2 = (JSONObject) commentsJson3.get(i);
  				System.out.println("Title from view##"+commentsJson2.getString("Title"));
+ 				String title=commentsJson2.getString("Title"); 				
  				String cardId=commentsJson2.getString("Id");
+ 				CSAMInfo csamInfo=new CSAMInfo();
+ 	        	csamInfo=dao.getCardDetails(cardId);
+ 				String[] parts = title.split("(-)");
+				if(parts.length>=3){
+					System.out.println("title after split::"+parts);
+					csamInfo.setCloudService(parts[1]);
+					csamInfo.setLob(parts[2]);
+				//String part1 = parts[0]; // 004
+ 				//String part2 = parts[1]; // -034556
+				}else if (parts.length==2){
+ 					//String part1 = parts[0]; // 004
+ 	 				//String part2 = parts[1]; // -034556
+					csamInfo.setCloudService(parts[1]);
+ 				}else if (parts.length==1){
+ 					csamInfo.setCloudService(parts[0]);
+ 				}
+ 				
+ 				
+ 				
  				String priority=commentsJson2.getString("PriorityText");
  	        	System.out.println("hi6 "+priority);
  	        	String description=commentsJson2.getString("Description");
@@ -205,8 +225,7 @@ private CSAManagerDao dao;
  	        	System.out.println("lastUpdatedDate  "+lastUpdatedDate);
  	        	String assignedTo=commentsJson2.getString("AssignedUserName");
  	        	//String cardId=commentsJson2.getString("Id");
- 	        	CSAMInfo csamInfo=new CSAMInfo();
- 	        	csamInfo=dao.getCardDetails(cardId);
+ 	        	
  	        	csamInfo.setAssignedTo(assignedTo);
  	        	csamInfo.setCardStatus(status);
  	        	csamInfo.setLastUpdatedDate(lastUpdatedDate);
@@ -268,8 +287,29 @@ private CSAManagerDao dao;
         	//String assignedTo=json2.getString("AssignedUserName");
         	
         	
-        	CSAMInfo csamInfo=new CSAMInfo();
-        	csamInfo=dao.getCardDetails(request.getParameter("cardid"));
+        	//CSAMInfo csamInfo=new CSAMInfo();
+        	//csamInfo=dao.getCardDetails(request.getParameter("cardid"));
+        	
+        	System.out.println("Title from card Details ##"+json2.getString("Title"));
+				String title=json2.getString("Title"); 				
+				String cardId=json2.getString("Id");
+				CSAMInfo csamInfo=new CSAMInfo();
+	        	csamInfo=dao.getCardDetails(cardId);
+				String[] parts = title.split("(-)");
+			if(parts.length>=3){
+				System.out.println("title after split::"+parts);
+				csamInfo.setCloudService(parts[1]);
+				csamInfo.setLob(parts[2]);
+			//String part1 = parts[0]; // 004
+				//String part2 = parts[1]; // -034556
+			}else if (parts.length==2){
+					//String part1 = parts[0]; // 004
+	 				//String part2 = parts[1]; // -034556
+				csamInfo.setCloudService(parts[1]);
+			}else if (parts.length==1){
+					csamInfo.setCloudService(parts[0]);
+			}
+        	
         	csamInfo.setAssignedTo(assignedTo);
         	csamInfo.setCardStatus(status);
         	csamInfo.setLastUpdatedDate(lastUpdatedDate);
