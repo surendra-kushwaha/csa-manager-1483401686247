@@ -85,7 +85,8 @@ private CSAManagerDao dao;
     	 response.setContentType("text/html");
          String responseBoard = "";
          CSARService http = new CSARService();
-         final String VIEW_STATUS = "CSARRequest?req=view";
+         //final String VIEW_STATUS = "CSARRequest?req=view";
+         final String VIEW_STATUS = "/createRequestForm.jsp";
  		String searchRequest = request.getParameter("req");
  		HttpSession session = request.getSession();
     	//if(requestorId==null){

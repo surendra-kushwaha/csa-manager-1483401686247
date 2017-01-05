@@ -57,15 +57,6 @@
 	<div class="col-lg-10 col-md-10 col-sm-9">
 		<div class="row pad-adju">
 		<p class="title-head" style="margin-left: 0">View List of Status</p>
-		<%String addFlag;
-if(request.getAttribute("addFlag")!=null) {
-	addFlag=(String)request.getAttribute("addFlag");
-	if(addFlag.equalsIgnoreCase("addSuccess")){
-%>
-<div class="success-msg">Cloud Service Aquisition request has been successfully logged</div>
-<%
-}
-}%> 
   		<div class="table-responsive">
   			<table class="table">
 			    <thead>
@@ -93,7 +84,7 @@ if(request.getAttribute("addFlag")!=null) {
 			      <tr>
 			        <td><%=csamInfo.getCloudService()%></td>
 			        <td><%=csamInfo.getLob()%></td>
-			        <td><%=csamInfo.getBusinessDesc()%></td>
+			        <td style="width:200px;"><%=csamInfo.getBusinessDesc()%></td>
 			        <td><span class='priority'><%=csamInfo.getPriority()%></span></td>
 			        <td><%=csamInfo.getCos()%></td>
 			        <td><a href="CSARRequest?req=carddetails&cardid=<%=csamInfo.getCardId()%>">Status Details</a></td>

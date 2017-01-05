@@ -58,6 +58,15 @@
 	<div class="col-lg-10 col-md-10 col-sm-9">
 		<div class="row pad-adju">
 		<p class="title-head">Cloud Service Acquisition Request (CSAR)</p>
+		<%String addFlag;
+if(request.getAttribute("addFlag")!=null) {
+	addFlag=(String)request.getAttribute("addFlag");
+	if(addFlag.equalsIgnoreCase("addSuccess")){
+%>
+<div class="success-msg">Cloud Service Aquisition request has been successfully logged</div>
+<%
+}
+}%> 
   		<div class="col-lg-5 col-md-5 col-sm-5">
   			<div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Cloud Service</label>
