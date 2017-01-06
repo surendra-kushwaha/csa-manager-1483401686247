@@ -73,7 +73,7 @@ if(request.getAttribute("validationMsg")!=null) {
 	validationFlag=(String)request.getAttribute("validationMsg");
 	if(validationFlag.equalsIgnoreCase("validationFailed")){
 %>
-<div class="login-error">All fields are mandatory</div>
+<div class="login-error" style "float:left;">All fields are mandatory</div>
 <%
 }
 }%>
@@ -83,7 +83,7 @@ if(request.getAttribute("APIError")!=null) {
 	ApiError=(String)request.getAttribute("APIError");
 	if(ApiError.equalsIgnoreCase("InvalidResponse")){
 %>
-<div class="login-error">Request could not created as leankit API response is invalid </div>
+<div class="login-error" style "float:left;">Request could not created as leankit API response is invalid </div>
 <%
 }
 }%>
