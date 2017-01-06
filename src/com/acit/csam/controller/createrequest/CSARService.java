@@ -135,20 +135,26 @@ private CSAManagerDao dao;
  			try{
  			JSONObject json = new JSONObject(responseBoard);
  			JSONArray json1 = (JSONArray)json.get("ReplyData");
- 			JSONObject json2 = (JSONObject) json1.get(0);
  			
- 			String cardId=json2.getString("CardId");
- 			System.out.println("CardId recieved in Response ##"+cardId);
- 			csamInfo.setCardId(cardId);			
-			
-			boolean status=dao.createCSAR(csamInfo);
- 			if(status){ 				
- 				System.out.println("data added successfully ");
- 				request.setAttribute("addFlag", "addSuccess");				
+ 			String replyCode=json.getString("ReplyCode");
+ 			System.out.println("ReplyCode of response::"+replyCode);
+ 			if(json1!=null || replyCode.equalsIgnoreCase("200")||replyCode.equalsIgnoreCase("201")){
+ 	 			JSONObject json2 = (JSONObject) json1.get(0);	 			
+	 			String cardId=json2.getString("CardId");
+	 			System.out.println("CardId recieved in Response ##"+cardId);
+	 			csamInfo.setCardId(cardId);							
+				boolean status=dao.createCSAR(csamInfo);
+	 			if(status){ 				
+	 				System.out.println("data added successfully ");
+	 				request.setAttribute("addFlag", "addSuccess");				
+	 			}
+ 			}else{
+ 				request.setAttribute("APIError", "InvalidResponse"); 	
  			}
  			}catch(Exception e){
  				System.out.println(e);
  			}
+ 			
  			//request.setAttribute("CardsList", http.getAllCards());
  			RequestDispatcher view = request.getRequestDispatcher(VIEW_STATUS);
             view.forward(request, response);

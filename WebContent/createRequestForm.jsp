@@ -77,6 +77,16 @@ if(request.getAttribute("validationMsg")!=null) {
 <%
 }
 }%>
+
+<%String ApiError;
+if(request.getAttribute("APIError")!=null) {
+	ApiError=(String)request.getAttribute("APIError");
+	if(ApiError.equalsIgnoreCase("InvalidResponse")){
+%>
+<div class="login-error">Request could not created as leankit API response is invalid </div>
+<%
+}
+}%>
   		<div class="col-lg-5 col-md-5 col-sm-5">
   			<div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Cloud Service</label>
