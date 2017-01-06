@@ -24,9 +24,11 @@ function changes() {
 }
 
 function validate () {
-	setTimeout(function() {
-		$(".success-msg").fadeOut();
-	}, 3000);
+	if($('.success-msg').length>0){
+		setTimeout(function() {
+			$(".success-msg").fadeOut();
+		}, 3000);
+	}
 }
 
 function feedbacks () {

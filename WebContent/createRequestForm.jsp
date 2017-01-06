@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <title>Create Request</title>
         <link href="lib/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
@@ -45,9 +46,9 @@
 	</div>
 </div>
 </div>
-    <body>
+    <body onload="validate()">
     
-<form method="POST" action="CSARRequest" name="requestForm" class="form-horizontal" onsubmit="validate()">
+<form method="POST" action="CSARRequest" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
   		<div class=""><a href="CSARRequest?req=view&userId=<%=userName%>"><img src="images/icon_View_Normal.png">View Status</a></div>
