@@ -108,7 +108,7 @@ private CSAManagerDao dao;
         	}
         	
         	if(cloudService==null || lob==null ||priority==null||cloudServiceUrl==null ||businessDesc==null||cos==null){
-        		request.setAttribute("validationMsg", "validationFailed");	
+        		request.setAttribute("validationMsg", "validationFailed"); 	
         		RequestDispatcher view = request.getRequestDispatcher(VIEW_STATUS);
                 view.forward(request, response);
         		
