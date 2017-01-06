@@ -6,6 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <title>View List Status</title>
         <link href="lib/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
