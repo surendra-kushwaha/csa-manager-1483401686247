@@ -46,9 +46,9 @@
 	</div>
 </div>
 </div>
-    <body>
+    <body onload="validate()">
     
-<form method="POST" action="CSARRequest" name="requestForm" class="form-horizontal" onsubmit="validate()">
+<form method="POST" action="CSARRequest" name="requestForm" class="form-horizontal">
 	<div>
   	<div class="col-lg-2 col-md-2 col-sm-3 left-menus">
   		<div class=""><a href="CSARRequest?req=view&userId=<%=userName%>"><img src="images/icon_View_Normal.png">View Status</a></div>
