@@ -95,10 +95,6 @@ private CSAManagerDao dao;
     	//}
  		//System.out.println("search request is------->"+searchRequest);
  		if(searchRequest.equals("create")){
- 			/*Utility.CARD_TITLE = request.getParameter("title");
- 			Utility.CARD_DESCRIPTION = request.getParameter("description");
- 			Utility.CARD_PRIORITY = http.getPriority(request.getParameter("priority"));
- 			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(request.getParameter("classservice"));*/
  			
  			String cloudService=request.getParameter("cloudService");
         	String lob=request.getParameter("lob");
@@ -110,6 +106,14 @@ private CSAManagerDao dao;
         	if(requestorId==null){
         		requestorId=userName;
         	}
+        	
+        	if(cloudService==null || lob==null ||priority==null||cloudServiceUrl==null ||businessDesc==null||cos==null){
+        		request.setAttribute("validationMsg", "validationFailed");	
+        		RequestDispatcher view = request.getRequestDispatcher(VIEW_STATUS);
+                view.forward(request, response);
+        		
+        	}
+        	
         	System.out.println("userId recieved in ontroller  "+requestorId);
         	CSAMInfo csamInfo=new CSAMInfo();
         	csamInfo.setCloudService(cloudService);
@@ -126,46 +130,21 @@ private CSAManagerDao dao;
  			Utility.CARD_PRIORITY = http.getPriority(priority);
  			Utility.CARD_CLASS_OF_SERVICE_ID = http.getClassOfService(cos);
  			Utility.CLOUD_SERVICE_URL = cloudServiceUrl;
- 			responseBoard = http.createCard();
- 			 
+ 			responseBoard = http.createCard(); 			 
  			//Parse response
  			try{
  			JSONObject json = new JSONObject(responseBoard);
  			JSONArray json1 = (JSONArray)json.get("ReplyData");
  			JSONObject json2 = (JSONObject) json1.get(0);
- 			//Utility.SEARCH_BY_BOARD_ID = ""+json2.getInt("BoardId");
- 			//Utility.LANE_ID = ""+json2.getInt("LaneId");
- 			//Utility.LANE_TITLE = json2.getString("LaneTitle");
- 			//String lastMove = json2.getString("LastMove");
+ 			
  			String cardId=json2.getString("CardId");
  			System.out.println("CardId recieved in Response ##"+cardId);
  			csamInfo.setCardId(cardId);			
 			
 			boolean status=dao.createCSAR(csamInfo);
- 			if(status){
- 				
+ 			if(status){ 				
  				System.out.println("data added successfully ");
- 				//response.getWriter().append("Data saved to DB "+status);
- 				//dao.getRequestaList(requestorId);
- 				//request.setAttribute("RequestList", dao.getRequestaList(requestorId));
- 				request.setAttribute("addFlag", "addSuccess");
- 				//request.setAttribute("CardsList", http.getAllCards());
- 				
- 				
- 				/*test in UI
- 				List<CSAMInfo> reqList=null; 				
- 				if(request.getAttribute("RequestList")!=null){
- 					reqList = (List)request.getAttribute("RequestList");
- 					System.out.println("reqList  ##"+reqList.toString());
-	 			   Iterator itr=reqList.iterator();
-	 			   while(itr.hasNext()){
-	 				  CSAMInfo skillInfo=(CSAMInfo)itr.next();
-	 				  System.out.println("from list cluodService@@"+skillInfo.getCloudService());
-	 				 System.out.println("from list cardId@@"+skillInfo.getCardId());
-	 			   }
- 			   }*/
- 			   
- 				
+ 				request.setAttribute("addFlag", "addSuccess");				
  			}
  			}catch(Exception e){
  				System.out.println(e);

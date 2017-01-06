@@ -67,6 +67,15 @@ if(request.getAttribute("addFlag")!=null) {
 <%
 }
 }%> 
+<%String validationFlag;
+if(request.getAttribute("validationMsg")!=null) {
+	validationFlag=(String)request.getAttribute("validationMsg");
+	if(validationFlag.equalsIgnoreCase("validationFailed")){
+%>
+<div class="login-error">All fields are mandatory</div>
+<%
+}
+}%>
   		<div class="col-lg-5 col-md-5 col-sm-5">
   			<div class="form-group">
 		  	<label for="inputEmail3"><span class="astri">*</span>Cloud Service</label>
