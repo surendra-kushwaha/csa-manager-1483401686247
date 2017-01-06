@@ -26,7 +26,7 @@ function changes() {
 function validate () {
 	setTimeout(function() {
 		$(".success-msg").fadeOut();
-	}, 3000);
+	}, 5000);
 }
 
 function feedbacks () {
