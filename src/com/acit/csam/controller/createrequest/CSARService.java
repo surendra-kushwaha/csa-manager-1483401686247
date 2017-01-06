@@ -114,6 +114,13 @@ private CSAManagerDao dao;
         		
         	}
         	
+        	if(cloudService.equals("") || lob.equals("") ||priority.equals("")||cloudServiceUrl.equals("") ||businessDesc.equals("")||cos.equals("")){
+        		request.setAttribute("validationMsg", "validationFailed"); 	
+        		RequestDispatcher view = request.getRequestDispatcher(VIEW_STATUS);
+                view.forward(request, response);
+        		
+        	}
+        	
         	System.out.println("userId recieved in ontroller  "+requestorId);
         	CSAMInfo csamInfo=new CSAMInfo();
         	csamInfo.setCloudService(cloudService);
@@ -134,11 +141,15 @@ private CSAManagerDao dao;
  			//Parse response
  			try{
  			JSONObject json = new JSONObject(responseBoard);
- 			JSONArray json1 = (JSONArray)json.get("ReplyData");
+ 			JSONArray json1=null;
+ 			if(json.get("ReplyData") instanceof JSONArray){
+ 				json1 = (JSONArray)json.get("ReplyData");
+ 			}
+ 			//JSONArray 
  			
  			String replyCode=json.getString("ReplyCode");
  			System.out.println("ReplyCode of response::"+replyCode);
- 			if(json1!=null || replyCode.equalsIgnoreCase("200")||replyCode.equalsIgnoreCase("201")){
+ 			if(replyCode.equalsIgnoreCase("200")||replyCode.equalsIgnoreCase("201")){
  	 			JSONObject json2 = (JSONObject) json1.get(0);	 			
 	 			String cardId=json2.getString("CardId");
 	 			System.out.println("CardId recieved in Response ##"+cardId);
@@ -427,6 +438,7 @@ private CSAManagerDao dao;
 		json.put("Priority", Utility.CARD_PRIORITY);
 		json.put("ExternalSystemUrl", Utility.CLOUD_SERVICE_URL );
 		json.put("ClassOfServiceId", Utility.CARD_CLASS_OF_SERVICE_ID);
+		json.put("UserWipOverrideComment ", "Need to add the card");
 		StringEntity params = new StringEntity(json.toString());
 
 		post.setEntity(params);

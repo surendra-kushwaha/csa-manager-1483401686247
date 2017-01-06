@@ -8,7 +8,7 @@ public class Utility {
 	public static final String BOARD_TITLE="Cloud Service Acquisition  Request";
 	public static String BOARD_ID = "428087839";
 	public static final String CREATE_CARD_URL = "https://narry1234.leankit.com/kanban/api/board/";
-	public static final String ADD_CARD="/AddCard/";
+	public static final String ADD_CARD="/AddCardWithWipOverride/";
 	public static final String ADD_LANE="lane/";
 	public static String LANE_ID="428335743";
 	public static String LANE_TITLE="CSA Request";
